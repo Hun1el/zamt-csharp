@@ -111,6 +111,36 @@ namespace Pr03
                 goto two;
             }
 
+        //Задание 3
+            Console.WriteLine("Задание 3.");
+            int[] array1 = new int[25];
+            Random randNum1 = new Random();
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                array1[i] = randNum1.Next(1, 100);
+            }
+
+            Console.WriteLine("\nСгенерированные элементы массива:");
+            Console.WriteLine(string.Join(" ", array1));
+
+            int min1 = array1.Min();
+            int max3 = array1.Max();
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                if (array1[i] == min1)
+                {
+                    array1[i] = max3;
+                }
+                else if (array1[i] == max3)
+                {
+                    array1[i] = min1;
+                }
+            }
+            Console.WriteLine("Массив после замены минимальных и максимальных значений:");
+            Console.WriteLine(string.Join(" ", array1));
+
             Console.ReadKey();
         }
     }
