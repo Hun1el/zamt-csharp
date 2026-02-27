@@ -52,6 +52,65 @@ namespace Pr03
                 goto one;
             }
 
+        // Задание 2
+        two:
+            Console.WriteLine("Задание 2. Введите пять различных ненулевых целых чисел:");
+            try
+            {
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                int num2 = Convert.ToInt32(Console.ReadLine());
+                int num3 = Convert.ToInt32(Console.ReadLine());
+                int num4 = Convert.ToInt32(Console.ReadLine());
+                int num5 = Convert.ToInt32(Console.ReadLine());
+
+                if (num1 == 0 || num2 == 0 || num3 == 0 || num4 == 0 || num5 == 0)
+                {
+                    Console.WriteLine("Числа не должны быть равны нулю.");
+                    goto two;
+                }
+
+                int max1 = Math.Max(num1, Math.Max(num2, Math.Max(num3, Math.Max(num4, num5))));
+                int max2 = int.MinValue;
+
+                if (num1 != max1)
+                {
+                    max2 = Math.Max(max2, num1);
+                }
+                if (num2 != max1)
+                {
+                    max2 = Math.Max(max2, num2);
+                }
+                if (num3 != max1)
+                {
+                    max2 = Math.Max(max2, num3);
+                }
+                if (num4 != max1)
+                {
+                    max2 = Math.Max(max2, num4);
+                }
+                if (num5 != max1)
+                {
+                    max2 = Math.Max(max2, num5);
+                }
+                if (max2 == int.MinValue)
+                {
+                    max2 = max1;
+                }
+
+                int prod = max1 * max2;
+                Console.WriteLine($"Произведение двух наибольших чисел: {prod}");
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto two;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto two;
+            }
+
             Console.ReadKey();
         }
     }
