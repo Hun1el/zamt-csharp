@@ -116,6 +116,33 @@ namespace Pr02
                 goto three;
             }
 
+        // Задание 4
+        four:
+            Console.WriteLine("Задание 4. Введите количество дней (N > 0):");
+            try
+            {
+                int day = Convert.ToInt32(Console.ReadLine());
+
+                if (day <= 0)
+                {
+                    Console.WriteLine("Введите положительное число дней.");
+                    goto four;
+                }
+
+                int week = day / 7;
+                Console.WriteLine("Количество полных недель: {0}", week);
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto four;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto four;
+            }
+
             Console.ReadKey();
         }
     }
