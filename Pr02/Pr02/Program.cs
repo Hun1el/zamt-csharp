@@ -77,6 +77,46 @@ namespace Pr02
                 Console.WriteLine(ex1.Message);
                 goto two;
             }
+
+        // Задание 3
+        three:
+            Console.WriteLine("Задание 3. Введите целое положительное четырехзначное число:");
+            try
+            {
+                int chislo2 = Convert.ToInt32(Console.ReadLine());
+
+                if (chislo2 < 1000 || chislo2 > 9999)
+                {
+                    Console.WriteLine("Введите корректное четырехзначное число.");
+                    goto three;
+                }
+
+                int d1 = chislo2 / 1000;
+                int d2 = (chislo2 / 100) % 10;
+                int d3 = (chislo2 / 10) % 10;
+                int d4 = chislo2 % 10;
+
+                if (d1 > d2 && d2 > d3 && d3 > d4)
+                {
+                    Console.WriteLine("Цифры числа образуют убывающую последовательность.");
+                }
+                else
+                {
+                    Console.WriteLine("Цифры числа не образуют убывающую последовательность.");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto three;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto three;
+            }
+
+            Console.ReadKey();
         }
     }
 }
