@@ -143,6 +143,51 @@ namespace Pr02
                 goto four;
             }
 
+        // Задание 5
+        five:
+            Console.WriteLine("Задание 5. Введите целое число в диапазоне от -9000 до 9000:");
+            try
+            {
+                int N = Convert.ToInt32(Console.ReadLine());
+
+                if (N < -9000 || N > 9000)
+                {
+                    Console.WriteLine("Число не соответствует диапазону.");
+                    goto five;
+                }
+
+                string desc = "";
+
+                if (N > 0)
+                {
+                    if (N < 10) desc = "положительное однозначное число";
+                    else if (N < 100) desc = "положительное двузначное число";
+                    else if (N < 1000) desc = "положительное трехзначное число";
+                    else desc = "положительное четырехзначное число";
+                }
+                else if (N < 0)
+                {
+                    N = -N;
+                    if (N < 10) desc = "отрицательное однозначное число";
+                    else if (N < 100) desc = "отрицательное двузначное число";
+                    else if (N < 1000) desc = "отрицательное трехзначное число";
+                    else desc = "отрицательное четырехзначное число";
+                }
+                else desc = "ноль";
+
+                Console.WriteLine(desc);
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto five;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto five;
+            }
+
             Console.ReadKey();
         }
     }
