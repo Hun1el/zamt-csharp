@@ -42,6 +42,41 @@ namespace Pr02
                 Console.WriteLine(ex2.Message);
                 goto one;
             }
+
+        // Задание 2
+        two:
+            Console.WriteLine("Задание 2. Введите положительное трехзначное число:");
+            try
+            {
+                int chislo1 = Convert.ToInt32(Console.ReadLine());
+
+                if (chislo1 < 100 || chislo1 > 999)
+                {
+                    Console.WriteLine("Введите корректное трехзначное число.");
+                    goto two;
+                }
+
+                int summa = (chislo1 / 100) + (chislo1 / 10 % 10) + (chislo1 % 10);
+
+                if (summa % 2 == 0)
+                {
+                    Console.WriteLine("Сумма всех цифр числа является четным числом.");
+                }
+                else
+                {
+                    Console.WriteLine("Сумма всех цифр числа является нечетным числом.");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto two;
+            }
+            catch (OverflowException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto two;
+            }
         }
     }
 }
