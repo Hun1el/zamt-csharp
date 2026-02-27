@@ -17,6 +17,42 @@ namespace Pr03
     {
         static void Main(string[] args)
         {
+        // Задание 1
+        one:
+            Console.WriteLine("Задание 1. Введите три целых положительных числа:");
+            try
+            {
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                int num2 = Convert.ToInt32(Console.ReadLine());
+                int num3 = Convert.ToInt32(Console.ReadLine());
+
+                if (num1 <= 0 || num2 <= 0 || num3 <= 0)
+                {
+                    Console.WriteLine("Ошибка ввода, числа должны быть положительными.");
+                    goto one;
+                }
+                else
+                    if (num1 == num2 || num1 == num3 || num2 == num3)
+                    {
+                        Console.WriteLine("Среди чисел есть хотя бы одна пара совпадающих.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Нет совпадающих чисел.");
+                    }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto one;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto one;
+            }
+
+            Console.ReadKey();
         }
     }
 }
