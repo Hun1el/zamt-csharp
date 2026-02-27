@@ -192,6 +192,70 @@ namespace Pr03
                 goto four;
             }
 
+        // Задание 5
+        five:
+            Console.WriteLine("Задание 5.");
+            try
+            {
+                Console.Write("Введите количество дней в диапазоне от 1 до 31: ");
+                int N = Convert.ToInt32(Console.ReadLine());
+
+                if (N <= 0 || N > 31)
+                {
+                    Console.WriteLine("Количество дней должно быть в диапазоне от 1 до 31.");
+                    goto four;
+                }
+                double[] array3 = new double[N];
+                Random randNum3 = new Random();
+
+                for (int i = 0; i < N; i++)
+                {
+                    array3[i] = Math.Round(randNum3.NextDouble() * 100, 2);
+                }
+
+                Console.WriteLine("Осадки за каждый день месяца:");
+
+                for (int i = 0; i < N; i++)
+                {
+                    Console.WriteLine($"День {i + 1}: {array3[i]} мм");
+                }
+
+                double even = 0;
+                double odd = 0;
+
+                for (int i = 0; i < N; i++)
+                {
+                    if ((i + 1) % 2 == 0)
+                    {
+                        even += array3[i]; // четное
+                    }
+                    else
+                    {
+                        odd += array3[i]; //нечетное
+                    }
+                }
+                Console.WriteLine($"Сумма осадков по четным дням: {even} мм");
+                Console.WriteLine($"Сумма осадков по нечетным дням: {odd} мм");
+                if (even > odd)
+                {
+                    Console.WriteLine("По четным числам выпало больше осадков.");
+                }
+                else
+                {
+                    Console.WriteLine("По нечетным числам выпало больше осадков.");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto five;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto five;
+            }
+
             Console.ReadKey();
         }
     }
