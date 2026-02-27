@@ -141,6 +141,57 @@ namespace Pr03
             Console.WriteLine("Массив после замены минимальных и максимальных значений:");
             Console.WriteLine(string.Join(" ", array1));
 
+        // Задание 4
+        four:
+            Console.WriteLine("Задание 4.");
+            try
+            {
+                int[] array2 = new int[25];
+                Random randNum2 = new Random();
+
+                for (int i = 0; i < array2.Length; i++)
+                {
+                    array2[i] = randNum2.Next(1, 100);
+                }
+
+                Console.WriteLine("Сгенерированные элементы массива:");
+                Console.WriteLine(string.Join(" ", array2));
+                Console.Write("Введите значение K (1 < K <= L <= 25): ");
+
+                int K = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Введите значение L (1 < K <= L <= 25): ");
+
+                int L = Convert.ToInt32(Console.ReadLine());
+
+                if (K <= 1 || L > 25 || K > L)
+                {
+                    Console.WriteLine("Значения K и L должны удовлетворять условию 1 < K <= L <= 25.");
+                }
+
+                int sum = 0;
+
+                for (int i = 0; i < array2.Length; i++)
+                {
+                    if (i < K - 1 || i > L - 1)
+                    {
+                        sum += array2[i];
+                    }
+                }
+
+                Console.WriteLine($"Сумма всех массива, кроме элементов с номерами от {K} до {L} включительно, равна: {sum}");
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto four;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto four;
+            }
+
             Console.ReadKey();
         }
     }
