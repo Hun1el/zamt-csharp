@@ -38,6 +38,18 @@ namespace Pr01
             double speedhour = speedmeter * 3.6;
 
             Console.WriteLine("Вы бежали со скоростью " + speedhour + "км/час");
+
+            //Задание 12
+            Console.Write("Введите величину первого сопротивления (Ом): ");
+            double fres = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Введите величину второго сопротивления (Ом): ");
+            double sres = Convert.ToDouble(Console.ReadLine());
+
+            double form3 = fres + sres;
+
+            Console.WriteLine("Сопротивление цепи (последовательное соединение): " + form3 + " Ом");
+            Console.ReadKey();
         }
     }
 }
