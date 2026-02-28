@@ -141,5 +141,24 @@ namespace Pr08
 
             return total;
         }
+
+        static int Three(string str1)
+        {
+            int count = 0;
+            char[] eng = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            
+            foreach (char ch in str1)
+            {
+                for (int i = 0; i < eng.Length; i++)
+                {
+                    if (ch == eng[i])
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
     }
 }
