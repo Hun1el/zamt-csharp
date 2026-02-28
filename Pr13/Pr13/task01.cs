@@ -35,6 +35,7 @@ namespace Pr13
 
             return product;
         }
+
         public int Result(bool truefalse = true)
         {
             return Result((int)N);
