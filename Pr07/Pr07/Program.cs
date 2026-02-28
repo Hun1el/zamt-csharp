@@ -56,6 +56,61 @@ namespace Pr07
             {
                 Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
             }
+
+            //Задание 2
+            try
+            {
+                Console.WriteLine("\nЗадание 2.");
+                string inputfile2 = "input2.txt";
+                string outputfile2 = "output2.txt";
+
+                string[] line2 = File.ReadAllLines(inputfile2);
+                int A2 = Convert.ToInt32(line2[0]);
+                int B2 = Convert.ToInt32(line2[1]);
+
+                if (A2 <= 0 || B2 <= 0)
+                {
+                    Console.WriteLine("A и B должны быть положительными числами.");
+                    File.WriteAllText(outputfile2, "Ошибка: A и B должны быть положительными.");
+                }
+                else if (A2 >= B2)
+                {
+                    Console.WriteLine("A должно быть меньше B.");
+                    File.WriteAllText(outputfile2, "Ошибка: A должно быть меньше B.");
+                }
+                else
+                {
+                    int prod = 1;
+
+                    for (int i = A2 + 1; i < B2; i++)
+                    {
+                        prod *= i;
+                    }
+
+                    File.WriteAllText(outputfile2, prod.ToString());
+                    Console.WriteLine("Вывод успешно записан в файл!");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных. Проверьте input2.txt. " + ex1.Message);
+                File.WriteAllText("output2.txt", "Ошибка: неверный формат данных. Проверьте input2.txt.");
+            }
+            catch (IndexOutOfRangeException ex2)
+            {
+                Console.WriteLine("Ошибка: " + ex2.Message);
+                File.WriteAllText("output2.txt", "Ошибка: Индекс находился вне границ массива. Проверьте input2.txt.");
+            }
+            catch (DirectoryNotFoundException ex3)
+            {
+                Console.WriteLine("Ошибка: Директория не найдена. " + ex3.Message);
+            }
+            catch (FileNotFoundException ex4)
+            {
+                Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
+            }
+
+            Console.ReadKey();
         }
     }
 }
