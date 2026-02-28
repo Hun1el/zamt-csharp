@@ -110,6 +110,62 @@ namespace Pr07
                 Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
             }
 
+            //Задание 3
+            try
+            {
+                Console.WriteLine("\nЗадание 3. Вводится строка, разделенная точками. Вывести подстроку, расположенную между первой и второй точками.");
+                string inputfile3 = "input3.txt";
+                string outputfile3 = "output3.txt";
+                string str1;
+
+                using (StreamReader reader = new StreamReader(inputfile3))
+                {
+                    str1 = reader.ReadLine();
+                }
+
+                str1 = str1.Replace(" ", ".");
+                Console.WriteLine("Строка с заменёнными пробелами на точки: " + str1);
+                int first = str1.IndexOf('.');
+                int second = str1.IndexOf('.', first + 1);
+
+                using (StreamWriter writer = new StreamWriter(outputfile3))
+                {
+                    writer.WriteLine("Строка с заменёнными пробелами на точки: " + str1);
+
+                    if (first != -1 && second != -1)
+                    {
+                        string result = str1.Substring(first + 1, second - first - 1);
+                        Console.WriteLine("Подстрока между первой и второй точками: " + result);
+                        writer.WriteLine("Подстрока между первой и второй точками: " + result);
+                    }
+                    else
+                    {
+                        Console.WriteLine("В строке менее двух точек. Исходная строка: " + str1);
+                        writer.WriteLine("В строке менее двух точек. Исходная строка: " + str1);
+                    }
+                }
+
+                Console.WriteLine("Вывод успешно записан в файл!");
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных. Проверьте input2.txt. " + ex1.Message);
+                File.WriteAllText("output3.txt", "Ошибка: неверный формат данных. Проверьте input3.txt.");
+            }
+            catch (IndexOutOfRangeException ex2)
+            {
+                Console.WriteLine("Ошибка: " + ex2.Message);
+                File.WriteAllText("output3.txt", "Ошибка: Индекс находился вне границ массива. Проверьте input3.txt.");
+            }
+            catch (DirectoryNotFoundException ex3)
+            {
+                Console.WriteLine("Ошибка: Директория не найдена. " + ex3.Message);
+            }
+            catch (FileNotFoundException ex4)
+            {
+                Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
+            }
+
             Console.ReadKey();
         }
     }
