@@ -77,7 +77,48 @@ namespace Pr09
                 Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
             }
 
+            // Задание 3
+            try
+            {
+                Console.WriteLine("\nЗадание 3. Написать функцию int Max3(A, B, C), возвращающую одно максимальное значение из 3-х своих аргументов.");
+                string inputfile2 = "input3.txt";
+                string outputfile2 = "output3.txt";
+                int A, B, C;
 
+                using (StreamReader reader = new StreamReader(inputfile2))
+                {
+                    A = Convert.ToInt32(reader.ReadLine());
+                    B = Convert.ToInt32(reader.ReadLine());
+                    C = Convert.ToInt32(reader.ReadLine());
+                }
+
+                int max = Max3(A, B, C);
+
+                using (StreamWriter writer = new StreamWriter(outputfile2))
+                {
+                    writer.WriteLine("Максимальное значение из 3-х аргументов: " + max);
+                    Console.WriteLine("Максимальное значение из 3-х аргументов: " + max);
+                    Console.WriteLine("Вывод успешно записан в файл!");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных. Проверьте input3.txt. " + ex1.Message);
+                File.WriteAllText("output3.txt", "Ошибка: неверный формат данных. Проверьте input3.txt.");
+            }
+            catch (IndexOutOfRangeException ex2)
+            {
+                Console.WriteLine("Ошибка: " + ex2.Message);
+                File.WriteAllText("output3.txt", "Ошибка: Индекс находился вне границ массива. Проверьте input3.txt.");
+            }
+            catch (DirectoryNotFoundException ex3)
+            {
+                Console.WriteLine("Ошибка: Директория не найдена. " + ex3.Message);
+            }
+            catch (FileNotFoundException ex4)
+            {
+                Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
+            }
         }
 
         static int Max3(int A, int B, int C)
