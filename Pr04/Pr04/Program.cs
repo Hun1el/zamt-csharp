@@ -126,6 +126,26 @@ namespace Pr04
                 goto two;
             }
 
+        // Задание 3
+        three:
+            Console.WriteLine("Задание 3. Вводится строка, состоящая из слов (разделенных знаком '='), содержащая, по крайней мере, один символ '='. ");
+            Console.Write("Введите строку: ");
+            string str1 = Console.ReadLine();
+            string[] mass1 = str1.Split('=');
+            if (!str1.Contains('='))
+            {
+                Console.WriteLine("В строке должен быть хотя бы один знак '='");
+                goto three;
+            }
+            if (mass1.Length < 4)
+            {
+                Console.WriteLine("Меньше трех знаков '='. Исходная строка: " + str1);
+            }
+            else
+            {
+                Console.WriteLine("Подстрока между вторым и третьим знаком '=': " + mass1[2]);
+            }
+
             Console.ReadKey();
         }
     }
