@@ -138,6 +138,37 @@ namespace Pr08
                             goto four;
                         }
 
+                    // Задание 5
+                    case "5":
+                    five: try
+                        {
+                            Console.WriteLine("Задание 5. Написать функцию int TimeToSec(H, M, S) целого типа, которая возвращает общее \nколичество прошедших секунд исходя из 3-х своих аргументов (H - часы, M - минуты, S - секунды).");
+                            Console.WriteLine("Введите часы (H), минуты (M) и секунды (S):");
+
+                            Console.Write("Введите часы: ");
+                            int H = Convert.ToInt32(Console.ReadLine());
+
+                            Console.Write("Введите минуты: ");
+                            int M = Convert.ToInt32(Console.ReadLine());
+
+                            Console.Write("Введите секунды: ");
+                            int S = Convert.ToInt32(Console.ReadLine());
+
+                            Console.Write("Всего секунд: ");
+                            Console.WriteLine(TimeToSec(H, M, S));
+                            break;
+                        }
+                        catch (FormatException ex1)
+                        {
+                            Console.WriteLine(ex1.Message);
+                            goto five;
+                        }
+                        catch (OverflowException ex2)
+                        {
+                            Console.WriteLine(ex2.Message);
+                            goto five;
+                        }
+
                     case "0":
                         return;
 
