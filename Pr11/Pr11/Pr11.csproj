@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="task02.cs" />
     <Compile Include="task04.cs" />
+    <Compile Include="task05.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
