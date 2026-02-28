@@ -184,5 +184,27 @@ namespace Pr08
 
             return count;
         }
+
+        static int Four(string str2)
+        {
+            int countruseng = 0;
+            char[] ruseng = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
+                              'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M','N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z',
+                              'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
+                              'Б', 'В', 'Г', 'Д', 'Ж', 'З', 'Й', 'К', 'Л', 'М', 'Н', 'П', 'Р', 'С', 'Т', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ' };
+
+            foreach (char ch2 in str2)
+            {
+                for (int i = 0; i < ruseng.Length; i++)
+                {
+                    if (ch2 == ruseng[i])
+                    {
+                        countruseng++;
+                    }
+                }
+            }
+
+            return countruseng;
+        }
     }
 }
