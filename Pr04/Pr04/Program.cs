@@ -19,6 +19,64 @@ namespace Pr04
     {
         static void Main(string[] args)
         {
+        // Задание 1
+        one:
+            try
+            {
+                Console.WriteLine("Задание 1. Дан целочисленный массив (N > 0), содержащий, по крайней мере, два нуля (Если нули идут подряд - вывести 0).");
+                Console.Write("Введите элементы массива (N > 0): ");
+
+                int N = Convert.ToInt32(Console.ReadLine());
+                int[] array1 = new int[N];
+
+                if (N <= 0)
+                {
+                    Console.WriteLine("Массив должен быть больше 0");
+                    goto one;
+                }
+
+                Console.WriteLine("Введите элементы массива: ");
+
+                for (int i = 0; i < N; i++)
+                {
+                    array1[i] = int.Parse(Console.ReadLine());
+                }
+
+                int zero1 = Array.IndexOf(array1, 0);
+                int zero2 = Array.LastIndexOf(array1, 0);
+
+                if (zero1 == zero2)
+                {
+                    Console.WriteLine("Сумма всех элементов массива: " + array1.Sum());
+                }
+                else if (zero2 - zero1 == 1)
+                {
+                    Console.WriteLine("Нули идут подряд. Сумма: 0");
+                }
+                else
+                {
+                    int sum = 0;
+
+                    for (int i = zero1 + 1; i < zero2; i++)
+                    {
+                        sum += array1[i];
+                    }
+
+                    Console.WriteLine("Сумма между двумя нулями: " + sum);
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto one;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto one;
+            }
+
+            Console.ReadKey();
         }
     }
 }
