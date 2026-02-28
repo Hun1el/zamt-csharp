@@ -17,6 +17,7 @@ namespace Pr11
     {
         static void Main(string[] args)
         {
+            // Задание 1
             task01 task1 = new task01();
         one:
             try
@@ -44,6 +45,39 @@ namespace Pr11
             {
                 Console.WriteLine(ex2.Message + "\n");
                 goto one;
+            }
+
+            // Задание 2
+            task02 task2 = new task02();
+        two:
+            try
+            {
+                Console.WriteLine("\nЗадание 2. Даны два целых положительных числа A и B (A < B). \nНайти произведение всех четных чисел расположенных между этими числами A и B.");
+                Console.Write("Введите число A (A < B): ");
+                int A = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Введите число B (B > A): ");
+                int B = Convert.ToInt32(Console.ReadLine());
+
+                if (A >= B)
+                {
+                    Console.WriteLine("Число A должно быть меньше числа B.");
+                    goto two;
+                }
+
+                task2.Number(A, B);
+                task2.Calc();
+                task2.Result();
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto two;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto two;
             }
 
             Console.ReadKey();
