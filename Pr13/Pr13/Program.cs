@@ -77,6 +77,34 @@ namespace Pr13
                 goto two;
             }
 
+        // Задание 3
+        three:
+            Console.WriteLine("Задание 3.");
+            try
+            {
+                Console.Write("Введите x: ");
+                string x = Console.ReadLine();
+
+                Console.Write("Введите y: ");
+                string y = Console.ReadLine();
+
+                task03 task3 = new task03();
+
+                int num = task3.Num(x, y);
+
+                Console.WriteLine("Точка " + (x, y) + "находится в " + num + "-й четверти.");
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto three;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto three;
+            }
+
             Console.ReadKey();
         }
     }
