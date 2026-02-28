@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,64 @@ namespace Pr09
     {
         static void Main(string[] args)
         {
+            // Задание 1
+            try
+            {
+                Console.WriteLine("Задание 1. Проверить истинность высказывания: Сумма всех цифр данного положительного трехзначного числа является четным числом.");
+                string inputfile1 = "input1.txt";
+                string outputfile1 = "output1.txt";
+                int str1;
 
+                using (StreamReader reader = new StreamReader(inputfile1))
+                {
+                    str1 = Convert.ToInt32(reader.ReadLine());
+                }
+
+                if (str1 < 100 || str1 > 999)
+                {
+                    Console.WriteLine("Ошибка: число должно быть положительным трёхзначным. Проверьте input1.txt");
+                    File.WriteAllText(outputfile1, "Число должно быть положительным трёхзначным.");
+                }
+                else
+                {
+                    int summa = (str1 / 100) + (str1 / 10 % 10) + (str1 % 10);
+
+                    using (StreamWriter writer = new StreamWriter(outputfile1))
+                    {
+                        if (summa % 2 == 0)
+                        {
+                            Console.WriteLine("Сумма всех цифр числа является четным числом.");
+                            writer.WriteLine("Сумма всех цифр числа является четным числом: " + summa);
+                            Console.WriteLine("Вывод успешно записан в файл!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Сумма всех цифр числа является нечетным числом.");
+                            writer.WriteLine("Сумма всех цифр числа является нечетным числом: " + summa);
+                            Console.WriteLine("Вывод успешно записан в файл!");
+                        }
+                    }
+
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных. Проверьте input1.txt. " + ex1.Message);
+                File.WriteAllText("output1.txt", "Ошибка: неверный формат данных. Проверьте input1.txt.");
+            }
+            catch (IndexOutOfRangeException ex2)
+            {
+                Console.WriteLine("Ошибка: " + ex2.Message);
+                File.WriteAllText("output1.txt", "Ошибка: Индекс находился вне границ массива. Проверьте input1.txt.");
+            }
+            catch (DirectoryNotFoundException ex3)
+            {
+                Console.WriteLine("Ошибка: Директория не найдена. " + ex3.Message);
+            }
+            catch (FileNotFoundException ex4)
+            {
+                Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
+            }
         }
     }
 }
