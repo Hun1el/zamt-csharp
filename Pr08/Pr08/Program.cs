@@ -20,5 +20,10 @@ namespace Pr08
         {
 
         }
+
+        static bool First(int x, int y)
+        {
+            return x > 0 && y < 0;
+        }
     }
 }
