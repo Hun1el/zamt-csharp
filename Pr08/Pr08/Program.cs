@@ -85,6 +85,30 @@ namespace Pr08
                             goto two;
                         }
 
+                    // Задание 3
+                    case "3":
+                    three:
+                        try
+                        {
+                            Console.WriteLine("Задание 3. Вводится строка. Подсчитать количество содержащихся в ней строчных букв латинского алфавита.");
+                            Console.WriteLine("Введите строку: ");
+                            string str1 = Console.ReadLine();
+                            int count = Three(str1);
+
+                            Console.WriteLine("Количество сточных букв латинского алфавита: " + count);
+                            break;
+                        }
+                        catch (FormatException ex1)
+                        {
+                            Console.WriteLine(ex1.Message);
+                            goto three;
+                        }
+                        catch (OverflowException ex2)
+                        {
+                            Console.WriteLine(ex2.Message);
+                            goto three;
+                        }
+
                     case "0":
                         return;
 
@@ -140,6 +164,25 @@ namespace Pr08
             }
 
             return total;
+        }
+
+        static int Three(string str1)
+        {
+            int count = 0;
+            char[] eng = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            
+            foreach (char ch in str1)
+            {
+                for (int i = 0; i < eng.Length; i++)
+                {
+                    if (ch == eng[i])
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
         }
     }
 }
