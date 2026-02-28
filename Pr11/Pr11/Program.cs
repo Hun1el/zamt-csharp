@@ -80,6 +80,37 @@ namespace Pr11
                 goto two;
             }
 
+            // Задание 4
+            task04 task4 = new task04();
+        four:
+            try
+            {
+                Console.WriteLine("\nЗадание 4.");
+                Console.Write("Введите угол в градусах (от 0 до 360): ");
+                double gradus = Convert.ToDouble(Console.ReadLine());
+
+                if (gradus < 0 || gradus > 360)
+                {
+                    Console.WriteLine("Значение градусов должно быть в диапазоне от 0 до 360.");
+                    goto four;
+                }
+                else
+                {
+                    double radians = task4.DegToRad(gradus);
+                    Console.WriteLine("Угол " + gradus + " градусов равен " + radians + " радиан.");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto four;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto two;
+            }
+
             Console.ReadKey();
         }
     }
