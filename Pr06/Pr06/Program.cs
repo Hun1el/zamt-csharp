@@ -19,7 +19,37 @@ namespace Pr06
     {
         static void Main(string[] args)
         {
+        //Задание 1
+            Console.WriteLine("Задание 1. Даны ненулевые числа x, y. Проверить истинность высказывания.");
+        one:
+            try
+            {
+                Console.WriteLine("Введите два ненулевых числа x и y");
 
+                int x = Convert.ToInt32(Console.ReadLine());
+                int y = Convert.ToInt32(Console.ReadLine());
+
+                if (x > 0 && y < 0)
+                {
+                    Console.WriteLine($"Точка с координатами ({x};{y}) лежит в четвертой координатной четверти: True\n");
+                }
+                else
+                {
+                    Console.WriteLine($"Точка с координатами ({x};{y}) НЕ лежит в четвертой координатной четверти: False");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto one;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto one;
+            }
+
+            Console.ReadKey();
         }
     }
 }
