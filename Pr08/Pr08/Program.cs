@@ -235,5 +235,10 @@ namespace Pr08
 
             return countruseng;
         }
+
+        static int TimeToSec(int H, int M, int S)
+        {
+            return H * 3600 + M * 60 + S;
+        }
     }
 }
