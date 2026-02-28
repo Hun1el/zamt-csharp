@@ -184,6 +184,74 @@ namespace Pr09
             {
                 Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
             }
+
+            // Задание 5
+            try
+            {
+                Console.WriteLine("\nЗадание 5. Вводится строка, состоящая из слов, разделенных подчеркиваниями.Подсчитать количество содержащихся в строке гласных букв.");
+                string inputfile5 = "input5.txt";
+                string outputfile5 = "output5.txt";
+                string str3;
+
+                using (StreamReader reader = new StreamReader(inputfile5))
+                {
+                    str3 = reader.ReadLine();
+                }
+
+                if (str3.Length < 50)
+                {
+                    Console.WriteLine("Длина строки должна быть больше 50 символов");
+                }
+                else
+                {
+                    str3 = str3.Replace(" ", "_");
+                    Console.WriteLine("Строка с заменёнными пробелами на подчёркивания: " + str3);
+                    string[] word = str3.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+                    int countruseng = 0;
+                    char[] ruseng = { 'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y', 'а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э',
+                                      'ю', 'я', 'А', 'Е', 'Ё', 'И', 'О', 'У', 'Ы', 'Э','Ю', 'Я' };
+
+                    foreach (char ch2 in str3)
+                    {
+                        for (int i = 0; i < ruseng.Length; i++)
+                        {
+                            if (ch2 == ruseng[i])
+                            {
+                                countruseng++;
+                            }
+                        }
+                    }
+
+                    using (StreamWriter writer = new StreamWriter(outputfile5))
+                    {
+                        writer.WriteLine("Строка с заменёнными пробелами на подчёркивания: " + str3);
+                        writer.WriteLine("Количество гласных в строке: " + countruseng);
+                    }
+
+                    Console.WriteLine("Количество согласных букв в строке: " + countruseng);
+                    Console.WriteLine("Вывод успешно записан в файл!");
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных. Проверьте input4.txt. " + ex1.Message);
+                File.WriteAllText("output5.txt", "Ошибка: неверный формат данных. Проверьте input5.txt.");
+            }
+            catch (IndexOutOfRangeException ex2)
+            {
+                Console.WriteLine("Ошибка: " + ex2.Message);
+                File.WriteAllText("output5.txt", "Ошибка: Индекс находился вне границ массива. Проверьте input5.txt.");
+            }
+            catch (DirectoryNotFoundException ex3)
+            {
+                Console.WriteLine("Ошибка: Директория не найдена. " + ex3.Message);
+            }
+            catch (FileNotFoundException ex4)
+            {
+                Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
+            }
+
+            Console.ReadKey();
         }
 
         static int Max3(int A, int B, int C)
