@@ -76,6 +76,56 @@ namespace Pr04
                 goto one;
             }
 
+        // Задание 2
+        two:
+            try
+            {
+                Console.WriteLine("Задание 2. Преобразовать массив, прибавив к четным числам первый элемент массива.");
+                Console.Write("Введите элементы массива (N > 0): ");
+
+                int N = Convert.ToInt32(Console.ReadLine());
+
+                if (N <= 0)
+                {
+                    Console.WriteLine("Массив должен быть больше 0");
+                    goto two;
+                }
+
+                int[] array2 = new int[N];
+                Random randNum1 = new Random();
+
+                for (int i = 0; i < N; i++)
+                {
+                    array2[i] = randNum1.Next(0, 100);
+                }
+
+                Console.WriteLine("Сгенерированный массив: ");
+                Console.WriteLine(string.Join(" ", array2));
+
+                int elem = array2[0];
+
+                for (int i = 1; i < N - 1; i++)
+                {
+                    if (array2[i] % 2 == 0)
+                    {
+                        array2[i] += elem;
+                    }
+                }
+
+                Console.WriteLine("Полученный массив: ");
+                Console.WriteLine(string.Join(" ", array2));
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto two;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto two;
+            }
+
             Console.ReadKey();
         }
     }
