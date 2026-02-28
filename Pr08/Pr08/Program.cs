@@ -109,6 +109,35 @@ namespace Pr08
                             goto three;
                         }
 
+                    // Задание 4
+                    case "4":
+                    four:
+                        try
+                        {
+                            Console.WriteLine("Задание 4. Вводится строка, состоящая из слов, разделенных подчеркиваниями. Подсчитать количество согласных букв.");
+                            Console.WriteLine("Введите строку:");
+                            string str2 = Console.ReadLine();
+
+                            str2 = str2.Replace(" ", "_");
+                            Console.WriteLine("Строка с заменёнными пробелами на подчёркивания: " + str2);
+
+                            string[] word = str2.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+                            int countruseng = Four(str2);
+
+                            Console.WriteLine("Количество согласных букв в строке: " + countruseng);
+                            break;
+                        }
+                        catch (FormatException ex1)
+                        {
+                            Console.WriteLine(ex1.Message);
+                            goto four;
+                        }
+                        catch (OverflowException ex2)
+                        {
+                            Console.WriteLine(ex2.Message);
+                            goto four;
+                        }
+
                     case "0":
                         return;
 
@@ -183,6 +212,28 @@ namespace Pr08
             }
 
             return count;
+        }
+
+        static int Four(string str2)
+        {
+            int countruseng = 0;
+            char[] ruseng = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
+                              'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M','N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z',
+                              'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
+                              'Б', 'В', 'Г', 'Д', 'Ж', 'З', 'Й', 'К', 'Л', 'М', 'Н', 'П', 'Р', 'С', 'Т', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ' };
+
+            foreach (char ch2 in str2)
+            {
+                for (int i = 0; i < ruseng.Length; i++)
+                {
+                    if (ch2 == ruseng[i])
+                    {
+                        countruseng++;
+                    }
+                }
+            }
+
+            return countruseng;
         }
     }
 }
