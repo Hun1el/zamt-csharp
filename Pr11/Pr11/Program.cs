@@ -17,7 +17,36 @@ namespace Pr11
     {
         static void Main(string[] args)
         {
+            task01 task1 = new task01();
+        one:
+            try
+            {
+                Console.WriteLine("Задание 1. Дано целое положительное трехзначное число N. Проверить истинность высказывания: \n«Данное число N читается одинаково слева направо и справа налево».");
+                Console.Write("Введите трехзначное положительное число N: ");
+                int N = Convert.ToInt32(Console.ReadLine());
 
+                if (N < 100 || N > 999)
+                {
+                    Console.WriteLine("Число должно быть положительным трехзначным\n");
+                    goto one;
+                }
+
+                task1.Number(N);
+                task1.Check();
+                task1.Result();
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto one;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto one;
+            }
+
+            Console.ReadKey();
         }
     }
 }
