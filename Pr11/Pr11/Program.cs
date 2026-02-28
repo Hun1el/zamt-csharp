@@ -111,6 +111,31 @@ namespace Pr11
                 goto two;
             }
 
+            // Задание 5
+            task05 task5 = new task05();
+        five:
+            try
+            {
+                Console.WriteLine("\nЗадание 5. Вводится строка, состоящая из слов, разделенных подчеркиваниями (одним или несколькими). Длина строки может быть разной. Определить и вывести количество слов в строке.");
+                Console.Write("Введите строку, состоящую из слов, разделенных подчеркиваниями: ");
+                string input = Console.ReadLine();
+                string strm = task5.Replaces(input);
+                int word = task5.Count(input);
+
+                Console.WriteLine("Строка с подчеркиваниями: " + strm);
+                Console.WriteLine("Количество слов в строке: " + word);
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto five;
+            }
+            catch (OverflowException ex1)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto five;
+            }
+
             Console.ReadKey();
         }
     }
