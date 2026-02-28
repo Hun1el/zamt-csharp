@@ -18,7 +18,62 @@ namespace Pr08
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                Console.WriteLine("Выберите задачу: \n1 - Задание 1 \n2 - Задание 2 \n3 - Задание 3 \n4 - Задание 4 \n5 - Задание 5 \n0 - Выход");
+                string choice = Console.ReadLine();
 
+                switch (choice)
+                {
+                    // Задание 1
+                    case "1":
+                    one:
+                        try
+                        {
+                            Console.WriteLine("Задание 1. Даны ненулевые числа x, y. Проверить истинность высказывания.");
+                            Console.WriteLine("Введите ненулевые числа x и y:");
+
+                            Console.Write("Введите x: ");
+                            int x = Convert.ToInt32(Console.ReadLine());
+
+                            Console.Write("Введите y: ");
+                            int y = Convert.ToInt32(Console.ReadLine());
+
+                            bool result1 = First(x, y);
+
+                            if (result1)
+                            {
+                                Console.WriteLine("Точка лежит в четвертой четверти.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Точка не лежит в четвертой четверти.");
+                            }
+                            break;
+                        }
+                        catch (FormatException ex1)
+                        {
+                            Console.WriteLine(ex1.Message);
+                            goto one;
+                        }
+                        catch (OverflowException ex2)
+                        {
+                            Console.WriteLine(ex2.Message);
+                            goto one;
+                        }
+                    case "0":
+                        return;
+
+                    default:
+                        Console.WriteLine("Некорректный выбор. Попробуйте снова.");
+                        break;
+                }
+            }
+        }
+
+        static bool First(int x, int y)
+        {
+            return x > 0 && y < 0;
         }
     }
 }
