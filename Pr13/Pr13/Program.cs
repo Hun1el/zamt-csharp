@@ -17,7 +17,36 @@ namespace Pr13
     {
         static void Main(string[] args)
         {
+        one:
+            Console.WriteLine("Задание 1. Дано целое число N (N > 0). Если N - нечетное - вывести произведение нечетных чисел до этого числа (1*3*5*N);Если N - четное - вывести произведение четных чисел до этого числа (2*4*6*N).");
+            try
+            {
+                Console.Write("Введите значение N: ");
+                int N = Convert.ToInt32(Console.ReadLine());
 
+                task01 task1 = new task01(N);
+
+                if (N <= 0)
+                {
+                    Console.WriteLine("Число должно быть больше 0\n");
+                    goto one;
+                }
+
+                int result = task1.Result();
+                Console.WriteLine("Результат для N= " + N + ": " + result);
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto one;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto one;
+            }
+
+            Console.ReadKey();
         }
     }
 }
