@@ -17,6 +17,7 @@ namespace Pr13
     {
         static void Main(string[] args)
         {
+        // Задание 1
         one:
             Console.WriteLine("Задание 1. Дано целое число N (N > 0). Если N - нечетное - вывести произведение нечетных чисел до этого числа (1*3*5*N);Если N - четное - вывести произведение четных чисел до этого числа (2*4*6*N).");
             try
@@ -44,6 +45,36 @@ namespace Pr13
             {
                 Console.WriteLine(ex2.Message + "\n");
                 goto one;
+            }
+
+        // Задание 2
+        two:
+            Console.WriteLine("\nЗадание 2. Дан целочисленный массив, состоящий из N элементов. Найти сумму и произведение всех чисел из данного массива.");
+            try
+            {
+                Console.Write("Введите количество элементов массива N: ");
+                int N = Convert.ToInt32(Console.ReadLine());
+
+                task02 task2 = new task02(N);
+
+                int[] array = task2.GetArray();
+                Console.WriteLine("Сгенерированный массив: " + string.Join(", ", array));
+
+                int sum = task2.Sum();
+                int product = task2.Prod();
+
+                Console.WriteLine($"\nСумма элементов массива: " + sum);
+                Console.WriteLine($"Произведение элементов массива: " + product);
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto two;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto two;
             }
 
             Console.ReadKey();
