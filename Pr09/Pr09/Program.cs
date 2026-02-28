@@ -119,6 +119,71 @@ namespace Pr09
             {
                 Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
             }
+
+            // Задание 4
+            try
+            {
+                Console.WriteLine("\nЗадание 4. Вводится строка. Подсчитать количество содержащихся строке чисел от 0 до 9. Вывести сумму этих чисел.");
+                string inputfile4 = "input4.txt";
+                string outputfile4 = "output4.txt";
+                string str2;
+
+                using (StreamReader reader = new StreamReader(inputfile4))
+                {
+                    str2 = reader.ReadLine();
+                }
+
+                if (str2.Length < 50)
+                {
+                    Console.WriteLine("Длина строки должна быть больше 50 символов");
+                }
+                else
+                {
+                    int countchis = 0;
+                    int summ = 0;
+                    char[] chis = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+                    foreach (char ch in str2)
+                    {
+                        for (int i = 0; i < chis.Length; i++)
+                        {
+                            if (ch == chis[i])
+                            {
+                                countchis++;
+                                summ += Convert.ToInt32(ch.ToString());
+                            }
+                        }
+                    }
+
+                    Console.WriteLine("Количество чисел в строке: " + countchis);
+                    Console.WriteLine("Сумма чисел в строке: " + summ);
+
+                    using (StreamWriter writer = new StreamWriter(outputfile4))
+                    {
+                        writer.WriteLine("Количество чисел в строке: " + countchis);
+                        writer.WriteLine("Сумма чисел в строке: " + summ);
+                        Console.WriteLine("Вывод успешно записан в файл!");
+                    }
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных. Проверьте input4.txt. " + ex1.Message);
+                File.WriteAllText("output4.txt", "Ошибка: неверный формат данных. Проверьте input4.txt.");
+            }
+            catch (IndexOutOfRangeException ex2)
+            {
+                Console.WriteLine("Ошибка: " + ex2.Message);
+                File.WriteAllText("output4.txt", "Ошибка: Индекс находился вне границ массива. Проверьте input4.txt.");
+            }
+            catch (DirectoryNotFoundException ex3)
+            {
+                Console.WriteLine("Ошибка: Директория не найдена. " + ex3.Message);
+            }
+            catch (FileNotFoundException ex4)
+            {
+                Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
+            }
         }
 
         static int Max3(int A, int B, int C)
