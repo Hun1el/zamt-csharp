@@ -105,6 +105,38 @@ namespace Pr13
                 goto three;
             }
 
+        // Задание 5
+        five:
+            Console.WriteLine("Задание 5.");
+            try
+            {
+                Console.Write("Введите строку, состоящую из слов, разделенных точками: ");
+                string str = Console.ReadLine();
+                int count = str.Split('.').Length - 1;
+
+                task05 task5 = new task05();
+
+                if (count < 2)
+                {
+                    Console.WriteLine("Исходная строка (меньше двух точек): " + str);
+                }
+                else
+                {
+                    string result = task5.Str(str);
+                    Console.WriteLine("Результат: " + result);
+                }
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message + "\n");
+                goto five;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message + "\n");
+                goto five;
+            }
+
             Console.ReadKey();
         }
     }
