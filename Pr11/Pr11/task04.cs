@@ -8,6 +8,9 @@ namespace Pr11
 {
     class task04
     {
-
+        public double DegToRad(double gradus)
+        {
+            return gradus * (Math.PI / 180.0);
+        }
     }
 }
