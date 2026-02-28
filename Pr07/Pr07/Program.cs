@@ -166,6 +166,52 @@ namespace Pr07
                 Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
             }
 
+            //Задание 4
+            try
+            {
+                Console.WriteLine("\nЗадание 4. Вводится строка из слов, разделённых подчеркиваниями. Определить и вывести количество слов в строке.");
+                string inputfile4 = "input4.txt";
+                string outputfile4 = "output4.txt";
+                string str2;
+
+                using (StreamReader reader = new StreamReader(inputfile4))
+                {
+                    str2 = reader.ReadLine();
+                }
+
+                str2 = str2.Replace(" ", "_");
+                Console.WriteLine("Строка с заменёнными пробелами на подчёркивания: " + str2);
+                string[] word = str2.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+                int count = word.Length;
+
+                using (StreamWriter writer = new StreamWriter(outputfile4))
+                {
+                    writer.WriteLine("Строка с заменёнными пробелами на точки: " + str2);
+                    writer.WriteLine("Количество слов в строке: " + count);
+                }
+
+                Console.WriteLine("Количество слов в строке: " + count);
+                Console.WriteLine("Вывод успешно записан в файл!");
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine("Ошибка: неверный формат данных. Проверьте input2.txt. " + ex1.Message);
+                File.WriteAllText("output4.txt", "Ошибка: неверный формат данных. Проверьте input4.txt.");
+            }
+            catch (IndexOutOfRangeException ex2)
+            {
+                Console.WriteLine("Ошибка: " + ex2.Message);
+                File.WriteAllText("output4.txt", "Ошибка: Индекс находился вне границ массива. Проверьте input4.txt.");
+            }
+            catch (DirectoryNotFoundException ex3)
+            {
+                Console.WriteLine("Ошибка: Директория не найдена. " + ex3.Message);
+            }
+            catch (FileNotFoundException ex4)
+            {
+                Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
+            }
+
             Console.ReadKey();
         }
     }
