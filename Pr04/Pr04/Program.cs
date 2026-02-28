@@ -173,6 +173,39 @@ namespace Pr04
             Console.WriteLine("Самое длинное слово: " + longword);
             Console.WriteLine("Длина самого длинного слова: " + longword.Length);
 
+        // Задание 5
+            Console.WriteLine("Задание 5. Вводится строка из слов, разделённых подчеркиваниями. Найти слова, которые содержат ровно три буквы 'x'.");
+            Console.Write("Введите строку: ");
+
+            string str3 = Console.ReadLine();
+            str3 = str3.Replace(" ", "_");
+
+            Console.WriteLine("Строка с заменёнными пробелами на подчёркивания: " + str3);
+
+            string[] words2 = str3.Split('_');
+            bool falses = false;
+
+            foreach (string word2 in words2)
+            {
+                int count = 0;
+                foreach (char c in word2)
+                {
+                    if (c == 'x')
+                    {
+                        count++;
+                    }
+                }
+                if (count == 3)
+                {
+                    Console.WriteLine("Слово с ровно тремя буквами 'x': " + word2);
+                    falses = true;
+                }
+            }
+            if (!falses)
+            {
+                Console.WriteLine("Нет слов с ровно тремя буквами 'x'.");
+            }
+
             Console.ReadKey();
         }
     }
