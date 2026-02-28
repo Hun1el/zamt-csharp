@@ -61,6 +61,30 @@ namespace Pr08
                             Console.WriteLine(ex2.Message);
                             goto one;
                         }
+
+                    // Задание 2
+                    case "2":
+                    two:
+                        try
+                        {
+                            Console.WriteLine("Задание 2. В вещественном массиве известны данные о количестве осадков, выпавших за каждый день месяца N. \nНайти общее число осадков, выпавших по нечетным числам этого месяца.");
+                            Console.WriteLine("Выберите месяц.(Укажите цифру от 1 до 12)");
+                            double total = Two();
+
+                            Console.WriteLine("\nОбщее число осадков по нечетным числам: {0} мм.", Math.Round(total, 2));
+                            break;
+                        }
+                        catch (FormatException ex1)
+                        {
+                            Console.WriteLine(ex1.Message);
+                            goto two;
+                        }
+                        catch (OverflowException ex2)
+                        {
+                            Console.WriteLine(ex2.Message);
+                            goto two;
+                        }
+
                     case "0":
                         return;
 
