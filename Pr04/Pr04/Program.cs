@@ -130,8 +130,10 @@ namespace Pr04
         three:
             Console.WriteLine("Задание 3. Вводится строка, состоящая из слов (разделенных знаком '='), содержащая, по крайней мере, один символ '='. ");
             Console.Write("Введите строку: ");
+
             string str1 = Console.ReadLine();
             string[] mass1 = str1.Split('=');
+
             if (!str1.Contains('='))
             {
                 Console.WriteLine("В строке должен быть хотя бы один знак '='");
@@ -145,6 +147,31 @@ namespace Pr04
             {
                 Console.WriteLine("Подстрока между вторым и третьим знаком '=': " + mass1[2]);
             }
+
+        // Задание 4
+            Console.WriteLine("Задание 4. Вводится строка из слов, разделённых подчеркиваниями. Найти и вывести длину самого большого слова.");
+            Console.Write("Введите строку: ");
+
+            string str2 = Console.ReadLine();
+            str2 = str2.Replace(" ", "_");
+
+            Console.WriteLine("Строка с заменёнными пробелами на подчёркивания: " + str2);
+
+            string[] words1 = str2.Split('_');
+            string longword = "";
+            int maxlength = 0;
+
+            foreach (string word1 in words1)
+            {
+                if (word1.Length > maxlength)
+                {
+                    maxlength = word1.Length;
+                    longword = word1;
+                }
+            }
+
+            Console.WriteLine("Самое длинное слово: " + longword);
+            Console.WriteLine("Длина самого длинного слова: " + longword.Length);
 
             Console.ReadKey();
         }
