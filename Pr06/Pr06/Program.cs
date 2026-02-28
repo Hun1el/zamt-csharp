@@ -49,6 +49,62 @@ namespace Pr06
                 goto one;
             }
 
+        //Задание 2
+        two:
+            try
+            {
+                Console.WriteLine("\nЗадание 2. Дан целочисленный массив (N > 0). Преобразовать массив, прибавив к четным числам первый элемент.");
+                Console.Write("Введите элементы массива (N > 0): ");
+
+                int N1 = Convert.ToInt32(Console.ReadLine());
+
+                if (N1 <= 0)
+                {
+                    Console.WriteLine("Массив должен быть больше 0");
+                    goto two;
+                }
+
+                if (N1 < 25)
+                {
+                    Console.WriteLine("Массив должен быть не менее 25 элементов.");
+                    goto two;
+                }
+
+                int[] array1 = new int[N1];
+                Random randNum1 = new Random();
+
+                for (int i = 0; i < N1; i++)
+                {
+                    array1[i] = randNum1.Next(0, 100);
+                }
+
+                Console.WriteLine("Сгенерированный массив: ");
+                Console.WriteLine(string.Join(" ", array1));
+
+                int elem = array1[0];
+
+                for (int i = 1; i < N1 - 1; i++)
+                {
+                    if (array1[i] % 2 == 0)
+                    {
+                        array1[i] += elem;
+                    }
+                }
+
+                Console.WriteLine("Полученный массив: ");
+                Console.WriteLine(string.Join(" ", array1));
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto two;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto two;
+            }
+
             Console.ReadKey();
         }
     }
