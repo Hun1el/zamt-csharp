@@ -199,6 +199,33 @@ namespace Pr06
                 goto four;
             }
 
+        //Задание 5
+        five:
+            Console.WriteLine("\nЗадание 5. Вводится строка, состоящая из слов разделенных точками. Вывести подстроку между второй и пятой точками.");
+            Console.Write("Введите строку: ");
+
+            string str2 = Console.ReadLine();
+
+            if (str2.Length < 40)
+            {
+                Console.WriteLine("Минимальный размер строки должен быть не менее 40 символов.");
+                goto five;
+            }
+
+            str2 = str2.Replace(" ", ".");
+            Console.WriteLine("Строка с заменёнными пробелами на точки: " + str2);
+            string[] ssttrr = str2.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (ssttrr.Length < 5)
+            {
+                Console.WriteLine("В строке менее пяти точек. Исходная строка: " + str2);
+            }
+            else
+            {
+                string result = string.Join(".", ssttrr[2], ssttrr[3], ssttrr[4]);
+                Console.WriteLine("Подстрока между второй и пятой точками: " + result);
+            }
+
             Console.ReadKey();
         }
     }
