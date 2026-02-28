@@ -61,6 +61,30 @@ namespace Pr08
                             Console.WriteLine(ex2.Message);
                             goto one;
                         }
+
+                    // Задание 2
+                    case "2":
+                    two:
+                        try
+                        {
+                            Console.WriteLine("Задание 2. В вещественном массиве известны данные о количестве осадков, выпавших за каждый день месяца N. \nНайти общее число осадков, выпавших по нечетным числам этого месяца.");
+                            Console.WriteLine("Выберите месяц.(Укажите цифру от 1 до 12)");
+                            double total = Two();
+
+                            Console.WriteLine("\nОбщее число осадков по нечетным числам: {0} мм.", Math.Round(total, 2));
+                            break;
+                        }
+                        catch (FormatException ex1)
+                        {
+                            Console.WriteLine(ex1.Message);
+                            goto two;
+                        }
+                        catch (OverflowException ex2)
+                        {
+                            Console.WriteLine(ex2.Message);
+                            goto two;
+                        }
+
                     case "0":
                         return;
 
@@ -74,6 +98,48 @@ namespace Pr08
         static bool First(int x, int y)
         {
             return x > 0 && y < 0;
+        }
+
+        static double Two()
+        {
+            double total = 0;
+            int month = Convert.ToInt32(Console.ReadLine());
+            double[] arraymonth;
+            int days = 0;
+
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 9 || month == 12)
+            {
+                days = 31;
+            }
+            else if (month == 4 || month == 6 || month == 10 || month == 11)
+            {
+                days = 30;
+            }
+            else if (month == 2)
+            {
+                days = 28;
+            }
+            else
+            {
+                Console.WriteLine("Недопустимое значение");
+                return 0;
+            }
+
+            arraymonth = new double[days];
+            Random random = new Random();
+
+            for (int i = 0; i < arraymonth.Length; i++)
+            {
+                arraymonth[i] = random.Next(0, 50) + random.NextDouble();
+                Console.WriteLine($"День {i + 1}: {Math.Round(arraymonth[i], 2)} мм");
+            }
+
+            for (int i = 0; i < days; i += 2)
+            {
+                total += arraymonth[i];
+            }
+
+            return total;
         }
     }
 }
