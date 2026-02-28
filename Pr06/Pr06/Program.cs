@@ -156,6 +156,49 @@ namespace Pr06
                 goto three;
             }
 
+        //Задание 4
+        four:
+            try
+            {
+                Console.WriteLine("\nЗадание 4. Вводится строка-предложение. Подсчитать количество содержащихся в строке знаков препинания.");
+                Console.WriteLine("Введите предложение: ");
+
+                string str1 = Console.ReadLine();
+
+                if (str1.Length < 40)
+                {
+                    Console.WriteLine("Минимальный размер строки должен быть не менее 40 символов.");
+                    goto four;
+                }
+
+                int count = 0;
+                char[] marks = { '.', ',', ':', ';', '!', '?' };
+
+                foreach (char ch in str1)
+                {
+                    for (int i = 0; i < marks.Length; i++)
+                    {
+                        if (ch == marks[i])
+                        {
+                            count++;
+                            break;
+                        }
+                    }
+                }
+
+                Console.WriteLine($"Количество знаков препинания: {count}");
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto four;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto four;
+            }
+
             Console.ReadKey();
         }
     }
