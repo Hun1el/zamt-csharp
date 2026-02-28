@@ -76,6 +76,13 @@ namespace Pr09
             {
                 Console.WriteLine("Ошибка: Файл не найден. " + ex4.Message);
             }
+
+
+        }
+
+        static int Max3(int A, int B, int C)
+        {
+            return Math.Max(A, Math.Max(B, C));
         }
     }
 }
