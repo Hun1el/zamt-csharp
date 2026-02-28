@@ -109,6 +109,35 @@ namespace Pr08
                             goto three;
                         }
 
+                    // Задание 4
+                    case "4":
+                    four:
+                        try
+                        {
+                            Console.WriteLine("Задание 4. Вводится строка, состоящая из слов, разделенных подчеркиваниями. Подсчитать количество согласных букв.");
+                            Console.WriteLine("Введите строку:");
+                            string str2 = Console.ReadLine();
+
+                            str2 = str2.Replace(" ", "_");
+                            Console.WriteLine("Строка с заменёнными пробелами на подчёркивания: " + str2);
+
+                            string[] word = str2.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+                            int countruseng = Four(str2);
+
+                            Console.WriteLine("Количество согласных букв в строке: " + countruseng);
+                            break;
+                        }
+                        catch (FormatException ex1)
+                        {
+                            Console.WriteLine(ex1.Message);
+                            goto four;
+                        }
+                        catch (OverflowException ex2)
+                        {
+                            Console.WriteLine(ex2.Message);
+                            goto four;
+                        }
+
                     case "0":
                         return;
 
