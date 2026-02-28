@@ -75,5 +75,47 @@ namespace Pr08
         {
             return x > 0 && y < 0;
         }
+
+        static double Two()
+        {
+            double total = 0;
+            int month = Convert.ToInt32(Console.ReadLine());
+            double[] arraymonth;
+            int days = 0;
+
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 9 || month == 12)
+            {
+                days = 31;
+            }
+            else if (month == 4 || month == 6 || month == 10 || month == 11)
+            {
+                days = 30;
+            }
+            else if (month == 2)
+            {
+                days = 28;
+            }
+            else
+            {
+                Console.WriteLine("Недопустимое значение");
+                return 0;
+            }
+
+            arraymonth = new double[days];
+            Random random = new Random();
+
+            for (int i = 0; i < arraymonth.Length; i++)
+            {
+                arraymonth[i] = random.Next(0, 50) + random.NextDouble();
+                Console.WriteLine($"День {i + 1}: {Math.Round(arraymonth[i], 2)} мм");
+            }
+
+            for (int i = 0; i < days; i += 2)
+            {
+                total += arraymonth[i];
+            }
+
+            return total;
+        }
     }
 }
