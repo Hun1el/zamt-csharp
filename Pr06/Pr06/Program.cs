@@ -105,6 +105,57 @@ namespace Pr06
                 goto two;
             }
 
+        //Задание 3
+        three:
+            try
+            {
+                Console.WriteLine("\nЗадание 3. Дан целочисленный массив (N > 0). Вывести количество элементов, перед первым минимальным элементом.");
+                Console.Write("Введите размер массива N (N > 0): ");
+
+                int N2 = Convert.ToInt32(Console.ReadLine());
+
+                if (N2 < 25)
+                {
+                    Console.WriteLine("Массив должен быть не менее 25 элементов.");
+                    goto three;
+                }
+
+                int[] array2 = new int[N2];
+                Random randNum2 = new Random();
+
+                for (int i = 0; i < N2; i++)
+                {
+                    array2[i] = randNum2.Next(0, 100);
+                }
+
+                Console.WriteLine("Сгенерированный массив: ");
+                Console.WriteLine(string.Join(" ", array2));
+
+                int minvalue = array2[0];
+                int mini = 0;
+
+                for (int i = 1; i < N2; i++)
+                {
+                    if (array2[i] < minvalue)
+                    {
+                        minvalue = array2[i];
+                        mini = i;
+                    }
+                }
+
+                Console.WriteLine($"Количество элементов перед первым минимальным элементом: {mini}");
+            }
+            catch (FormatException ex1)
+            {
+                Console.WriteLine(ex1.Message);
+                goto three;
+            }
+            catch (OverflowException ex2)
+            {
+                Console.WriteLine(ex2.Message);
+                goto three;
+            }
+
             Console.ReadKey();
         }
     }
