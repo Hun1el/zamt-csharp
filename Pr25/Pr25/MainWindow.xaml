@@ -1,0 +1,31 @@
+﻿<Window x:Class="Pr25.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr25"
+        mc:Ignorable="d"
+        Title="Практическая работа №25" Height="450" Width="800">
+    <Grid>
+        <GroupBox Header="Задача 1: Проверка уникальности цифр" Margin="20,20,400,151">
+            <StackPanel Height="242">
+                <TextBlock Text="Введите четырехзначное число:" Margin="5"/>
+                <TextBox x:Name="txtNumber" Width="150" Margin="5"/>
+                <Button Content="Проверить" Click="Task01" Width="100" Margin="5"/>
+                <TextBlock x:Name="lblResult1" Margin="5" Text="Результат проверки"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Задача 2: Произведение трех наибольших чисел" Margin="400,20,20,151">
+            <StackPanel Height="242">
+                <TextBlock Text="Введите пять различных чисел:" Margin="5"/>
+                <TextBox x:Name="txtNumber1" Width="100" Margin="5"/>
+                <TextBox x:Name="txtNumber2" Width="100" Margin="5"/>
+                <TextBox x:Name="txtNumber3" Width="100" Margin="5"/>
+                <TextBox x:Name="txtNumber4" Width="100" Margin="5"/>
+                <TextBox x:Name="txtNumber5" Width="100" Margin="5"/>
+                <Button Content="Вычислить" Click="Task02" Width="100"/>
+                <TextBlock x:Name="lblResult2" Margin="5" Text="Результат произведения"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
