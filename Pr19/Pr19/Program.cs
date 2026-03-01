@@ -75,6 +75,28 @@ namespace Pr19
             var output2 = new XElement("result", new XElement("prod", prod));
             output2.Save("output2.xml");
 
+            // Задание 5
+            XPathDocument input5 = new XPathDocument("input5.xml");
+            XPathNavigator navigator5 = input5.CreateNavigator();
+
+            string text = navigator5.SelectSingleNode("/task/text").Value;
+
+            var words = text.Split(new[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+            int wordinput = 0;
+
+            foreach (var word in words)
+            {
+                if (word.Length > 1 && word[1] == word[word.Length - 1])
+                {
+                    wordinput++;
+                }
+            }
+
+            var output5 = new XElement("result", new XElement("words", wordinput));
+            output5.Save("output5.xml");
+
+            Console.WriteLine("Задание 5 выполнено.");
+
             Console.ReadKey();
         }
     }
