@@ -83,13 +83,74 @@ namespace Pr15
             }
         }
 
+        class Liquid
+        {
+            public string name;
+            public double density;
+
+            public Liquid(string name, double density)
+            {
+                if (density <= 0)
+                {
+                    Console.WriteLine("Плотность должна быть больше 0.");
+                }
+                Console.WriteLine($"Создана жидкость: {name}, Плотность: {density}");
+            }
+
+            public void Newname(string newname)
+            {
+                name = newname;
+                Console.WriteLine($"Название жидкости изменено на: {name}");
+            }
+
+            public void Newdensity(double newdensity)
+            {
+                if (newdensity <= 0)
+                {
+                    Console.WriteLine("Плотность должна быть больше 0.");
+                }
+                else
+                {
+                    density = newdensity;
+                    Console.WriteLine($"Плотность жидкости {name} изменена на: {density}");
+                }
+            }
+        }
+
+        class Alcohol : Liquid
+        {
+            public double strength;
+
+            public Alcohol(string name, double density, double strength) : base(name, density)
+            {
+                if (strength < 0)
+                {
+                    Console.WriteLine("Крепость должна быть положительной.");
+                }
+                Console.WriteLine($"Создан спирт: {name}, Плотность: {density}, Крепость: {strength}");
+            }
+
+            public void Newstrength(double newstrength)
+            {
+                if (newstrength < 0)
+                {
+                    Console.WriteLine("Крепость должна быть положительной.");
+                }
+                else
+                {
+                    strength = newstrength;
+                    Console.WriteLine($"Крепость спирта {name} изменена на: {strength}");
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
-            // Задание 1
             while (true)
             {
                 try
                 {
+                    // Задание 1
                     Console.WriteLine("Задание 1.");
                     Console.WriteLine("Введите марку автомобиля:");
                     string brand = Console.ReadLine();
@@ -111,6 +172,27 @@ namespace Pr15
                     int newCapacity = Try("Введите новую грузоподъемность:");
 
                     lorry.NewbrandAndCapacity(newTruckBrand, newCapacity);
+
+                    // Задание 2
+                    Console.WriteLine("Задание 2.");
+                    Console.WriteLine("Введите название жидкости:");
+                    string name = Console.ReadLine();
+
+                    double density = Try("Введите плотность жидкости:");
+                    Liquid liquid = new Liquid(name, density);
+
+                    Console.WriteLine("Изменить название жидкости:");
+                    string newName = Console.ReadLine();
+                    liquid.Newname(newName);
+
+                    double newDensity = Try("Введите новую плотность:");
+                    liquid.Newdensity(newDensity);
+
+                    double strength = Try("Введите крепость:");
+                    Alcohol alcohol = new Alcohol(newName, newDensity, strength);
+
+                    double newStrength = Try("Введите новую крепость:");
+                    alcohol.Newstrength(newStrength);
                     break;
                 }
                 catch (FormatException ex1)
