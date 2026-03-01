@@ -57,7 +57,51 @@ namespace Pr15
         static void Main(string[] args)
         {
             // Задание 1
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Задание 1.");
+                    Console.WriteLine("Введите марку автомобиля:");
+                    string brand = Console.ReadLine();
 
+                    int cylinders = Try("\nВведите количество цилиндров:");
+                    int power = Try("\nВведите мощность двигателя (л.с.):");
+
+                    Car car = new Car(brand, cylinders, power);
+
+                    Console.WriteLine("Изменить мощность двигателя:");
+                    int newpower = Try("Введите новую мощность:");
+                    car.Newpower(newpower);
+                    break;
+                }
+                catch (FormatException ex1)
+                {
+                    Console.WriteLine(ex1.Message);
+                }
+                catch (ArgumentException ex2)
+                {
+                    Console.WriteLine(ex2.Message);
+                }
+            }
+            Console.ReadKey();
+        }
+
+        static int Try(string prompt)
+        {
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                string input = Console.ReadLine();
+
+                int result = Convert.ToInt32(input);
+
+                if (result > 0)
+                {
+                    return result;
+                }
+                Console.WriteLine("Введите число больше 0.");
+            }
         }
     }
 }
