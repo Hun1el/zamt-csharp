@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="OrderedTest1" storage="d:\lessons\unit testing fundamentals\003 moq\simpleclasslibrary\simpleclasslibrary.test\orderedtest1.orderedtest" id="1e2d5069-a12a-4743-a04a-dfbbb8acb014" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="cdeae14e-8b00-0607-258b-d2e29a0a6880" name="Add_2_3_Returns_5" storage="bin\debug\simpleclasslibrary.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="050851fb-2e91-e0f0-9aa2-d1cf16835ca4" name="Div_10_2_Returns_5" storage="bin\debug\simpleclasslibrary.test.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

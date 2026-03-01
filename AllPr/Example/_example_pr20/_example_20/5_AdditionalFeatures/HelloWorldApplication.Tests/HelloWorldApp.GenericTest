@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GenericTest name="helloworldapp" storage="d:\lessons\unit test fundamentals video\001 introduction\007_additionalfeatures\helloworldapplication.tests\helloworldapp.generictest" id="1093370d-6f51-4731-9a67-502c2857e06b" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Command filename="D:\Lessons\Unit Test Fundamentals Video\001 Introduction\007_AdditionalFeatures\HelloWorldApplication\bin\Debug\HelloWorldApplication.exe" arguments="&quot;Hello world&quot;" workingDirectory="%TestOutputDirectory%" />
+  <SummaryXmlFile path="%TestOutputDirectory%\&lt;Enter summary file name here&gt;" />
+</GenericTest>
