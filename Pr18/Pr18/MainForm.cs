@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pr18
@@ -30,7 +23,7 @@ namespace Pr18
             Task2 task2 = new Task2();
             this.Hide();
             task2.ShowDialog();
-            this.Show(); 
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -43,7 +36,10 @@ namespace Pr18
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Task4 task4 = new Task4();
+            this.Hide();
+            task4.ShowDialog();
+            this.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
