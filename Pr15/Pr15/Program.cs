@@ -117,6 +117,33 @@ namespace Pr15
             }
         }
 
+        class Alcohol : Liquid
+        {
+            public double strength;
+
+            public Alcohol(string name, double density, double strength) : base(name, density)
+            {
+                if (strength < 0)
+                {
+                    Console.WriteLine("Крепость должна быть положительной.");
+                }
+                Console.WriteLine($"Создан спирт: {name}, Плотность: {density}, Крепость: {strength}");
+            }
+
+            public void Newstrength(double newstrength)
+            {
+                if (newstrength < 0)
+                {
+                    Console.WriteLine("Крепость должна быть положительной.");
+                }
+                else
+                {
+                    strength = newstrength;
+                    Console.WriteLine($"Крепость спирта {name} изменена на: {strength}");
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             while (true)
@@ -160,6 +187,12 @@ namespace Pr15
 
                     double newDensity = Try("Введите новую плотность:");
                     liquid.Newdensity(newDensity);
+
+                    double strength = Try("Введите крепость:");
+                    Alcohol alcohol = new Alcohol(newName, newDensity, strength);
+
+                    double newStrength = Try("Введите новую крепость:");
+                    alcohol.Newstrength(newStrength);
                     break;
                 }
                 catch (FormatException ex1)
