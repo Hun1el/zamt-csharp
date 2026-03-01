@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Pr14
 {
@@ -29,6 +30,27 @@ namespace Pr14
         static void Main(string[] args)
         {
 
+        }
+
+        static Yacht[] Textfile(string namefile)
+        {
+            string[] lines = File.ReadAllLines(namefile);
+            Yacht[] yachts = new Yacht[lines.Length];
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split(';');
+
+                yachts[i] = new Yacht
+                {
+                    name = parts[0],
+                    owner = parts[1],
+                    sail = Convert.ToDouble(parts[2]),
+                    masts = Convert.ToInt32(parts[3]),
+                    price = Convert.ToDouble(parts[4]),
+                };
+            }
+            return yachts;
         }
     }
 }
