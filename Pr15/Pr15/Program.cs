@@ -119,11 +119,11 @@ namespace Pr15
 
         static void Main(string[] args)
         {
-            // Задание 1
             while (true)
             {
                 try
                 {
+                    // Задание 1
                     Console.WriteLine("Задание 1.");
                     Console.WriteLine("Введите марку автомобиля:");
                     string brand = Console.ReadLine();
@@ -145,6 +145,21 @@ namespace Pr15
                     int newCapacity = Try("Введите новую грузоподъемность:");
 
                     lorry.NewbrandAndCapacity(newTruckBrand, newCapacity);
+
+                    // Задание 2
+                    Console.WriteLine("Задание 2.");
+                    Console.WriteLine("Введите название жидкости:");
+                    string name = Console.ReadLine();
+
+                    double density = Try("Введите плотность жидкости:");
+                    Liquid liquid = new Liquid(name, density);
+
+                    Console.WriteLine("Изменить название жидкости:");
+                    string newName = Console.ReadLine();
+                    liquid.Newname(newName);
+
+                    double newDensity = Try("Введите новую плотность:");
+                    liquid.Newdensity(newDensity);
                     break;
                 }
                 catch (FormatException ex1)
