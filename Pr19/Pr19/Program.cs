@@ -19,63 +19,92 @@ namespace Pr19
     {
         static void Main(string[] args)
         {
-            // Задание 1
-            XPathDocument input1 = new XPathDocument("input1.xml");
-            XPathNavigator navigator1 = input1.CreateNavigator();
-
-            string str = navigator1.SelectSingleNode("/task/number").Value;
-            int number = Convert.ToInt32(str);
-
-            if (number < 1000 || number > 9999)
+            try
             {
-                Console.WriteLine("Число должно быть четырехзначным.");
-            }
-            else
-            {
-                Console.WriteLine("Задание 1 выполнено.");
-            }
+                // Задание 1
+                XPathDocument input1 = new XPathDocument("input1.xml");
+                XPathNavigator navigator1 = input1.CreateNavigator();
 
-            bool outputfile1 = number.ToString().Distinct().Count() == 4;
+                string str = navigator1.SelectSingleNode("/task/number").Value;
+                int number = Convert.ToInt32(str);
 
-            var output1 = new XElement("result", new XElement("output", outputfile1));
-            output1.Save("output1.xml");
-
-            // Задание 2
-            XPathDocument input2 = new XPathDocument("input2.xml");
-            XPathNavigator navigator2 = input2.CreateNavigator();
-
-            var n = navigator2.Select("/task/numbers/number");
-
-            int[] numbers = new int[5];
-            int index = 0;
-
-            while (n.MoveNext())
-            {
-                int value = Convert.ToInt32(n.Current.Value);
-
-                if (value == 0)
+                if (number < 1000 || number > 9999)
                 {
-                    Console.WriteLine("Все числа должны быть ненулевыми.");
+                    Console.WriteLine("Число должно быть четырехзначным.");
+                }
+                else
+                {
+                    Console.WriteLine("Задание 1 выполнено.");
                 }
 
-                numbers[index++] = value;
+                bool outputfile1 = number.ToString().Distinct().Count() == 4;
+
+                var output1 = new XElement("result", new XElement("output", outputfile1));
+                output1.Save("output1.xml");
+
+                // Задание 2
+                XPathDocument input2 = new XPathDocument("input2.xml");
+                XPathNavigator navigator2 = input2.CreateNavigator();
+
+                var n = navigator2.Select("/task/numbers/number");
+
+                int[] numbers = new int[5];
+                int index = 0;
+
+                while (n.MoveNext())
+                {
+                    int value = Convert.ToInt32(n.Current.Value);
+
+                    if (value == 0)
+                    {
+                        Console.WriteLine("Все числа должны быть ненулевыми.");
+                    }
+
+                    numbers[index++] = value;
+                }
+                if (index != 5)
+                {
+                    Console.WriteLine("Дожно быть ровно 5 числе");
+                }
+                else
+                {
+                    Console.WriteLine("Задание 2 выполнено.");
+                }
+
+                Array.Sort(numbers);
+                int prod = numbers[4] * numbers[3] * numbers[2];
+
+                var output2 = new XElement("result", new XElement("prod", prod));
+                output2.Save("output2.xml");
+
+                // Задание 5
+                XPathDocument input5 = new XPathDocument("input5.xml");
+                XPathNavigator navigator5 = input5.CreateNavigator();
+
+                string text = navigator5.SelectSingleNode("/task/text").Value;
+
+                var words = text.Split(new[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+                int wordinput = 0;
+
+                foreach (var word in words)
+                {
+                    if (word.Length > 1 && word[1] == word[word.Length - 1])
+                    {
+                        wordinput++;
+                    }
+                }
+
+                var output5 = new XElement("result", new XElement("words", wordinput));
+                output5.Save("output5.xml");
+
+                Console.WriteLine("Задание 5 выполнено.");
+
+                Console.ReadKey();
             }
-            if (index != 5)
+            catch (Exception ex)
             {
-                Console.WriteLine("Дожно быть ровно 5 числе");
+                Console.WriteLine(ex.Message);
             }
-            else
-            {
-                Console.WriteLine("Задание 2 выполнено.");
-            }
-
-            Array.Sort(numbers);
-            int prod = numbers[4] * numbers[3] * numbers[2];
-
-            var output2 = new XElement("result", new XElement("prod", prod));
-            output2.Save("output2.xml");
-
-            Console.ReadKey();
         }
     }
 }
