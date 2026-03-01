@@ -24,7 +24,28 @@ namespace Pr18
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string input = textBox1.Text;
+            bool isOrdered = true;
+            int index = 0;
 
+            for (int i = 1; i < input.Length; i++)
+            {
+                if (input[i] < input[i - 1])
+                {
+                    isOrdered = false;
+                    index = i;
+                    break;
+                }
+            }
+
+            if (isOrdered)
+            {
+                label2.Text = "0";
+            }
+            else
+            {
+                label2.Text = $"Нарушение на индексе: {index}";
+            }
         }
     }
 }
