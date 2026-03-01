@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pr18
 {
-    public partial class Task1 : Form
+    public partial class MainForm : Form
     {
-        public Task1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -23,6 +23,21 @@ namespace Pr18
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
