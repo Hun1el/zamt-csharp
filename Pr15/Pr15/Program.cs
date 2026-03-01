@@ -54,6 +54,35 @@ namespace Pr15
             }
         }
 
+        class Lorry : Car
+        {
+            public int capacity;
+
+            public Lorry(string brand, int cylinder, int power, int capacity) : base(brand, cylinder, power)
+            {
+                if (capacity <= 0)
+                {
+                    Console.WriteLine("Грузоподъемность должна быть больше 0.");
+                }
+
+                Console.WriteLine($"Создан грузовик: {brand}, Цилиндров: {cylinder}, Мощность: {power} л.с., Грузоподъемность: {capacity} кг.");
+            }
+
+            public void NewbrandAndCapacity(string newBrand, int newCapacity)
+            {
+                if (newCapacity <= 0)
+                {
+                    Console.WriteLine("Грузоподъемность должна быть больше 0.");
+                    return;
+                }
+
+                brand = newBrand;
+                capacity = newCapacity;
+
+                Console.WriteLine($"Обновлённые данные грузовика: Марка: {brand}, Грузоподъемность: {capacity} кг.");
+            }
+        }
+
         static void Main(string[] args)
         {
             // Задание 1
