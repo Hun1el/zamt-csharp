@@ -40,6 +40,41 @@ namespace Pr19
             var output1 = new XElement("result", new XElement("output", outputfile1));
             output1.Save("output1.xml");
 
+            // Задание 2
+            XPathDocument input2 = new XPathDocument("input2.xml");
+            XPathNavigator navigator2 = input2.CreateNavigator();
+
+            var n = navigator2.Select("/task/numbers/number");
+
+            int[] numbers = new int[5];
+            int index = 0;
+
+            while (n.MoveNext())
+            {
+                int value = Convert.ToInt32(n.Current.Value);
+
+                if (value == 0)
+                {
+                    Console.WriteLine("Все числа должны быть ненулевыми.");
+                }
+
+                numbers[index++] = value;
+            }
+            if (index != 5)
+            {
+                Console.WriteLine("Дожно быть ровно 5 числе");
+            }
+            else
+            {
+                Console.WriteLine("Задание 2 выполнено.");
+            }
+
+            Array.Sort(numbers);
+            int prod = numbers[4] * numbers[3] * numbers[2];
+
+            var output2 = new XElement("result", new XElement("prod", prod));
+            output2.Save("output2.xml");
+
             Console.ReadKey();
         }
     }
