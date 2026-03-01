@@ -20,8 +20,43 @@ namespace Pr15
 {
     internal class Program
     {
+        class Car
+        {
+            public string brand;
+            public int cylinder;
+            public int power;
+
+            public Car(string brand, int cylinder, int power)
+            {
+                if (cylinder <= 0)
+                {
+                    Console.WriteLine("Количество цилиндров должно быть больше 0.");
+                }
+                else if (power <= 0)
+                {
+                    Console.WriteLine("Мощность должна быть больше 0.");
+                }
+
+                Console.WriteLine($"\nСоздан автомобиль: {brand}, Цилиндров: {cylinder}, Мощность: {power} л.с.");
+            }
+
+            public void Newpower(int newpower)
+            {
+                if (newpower <= 0)
+                {
+                    Console.WriteLine("Мощность должна быть больше 0.");
+                }
+                else
+                {
+                    power = newpower;
+                    Console.WriteLine($"Мощность автомобиля {brand} изменена на {power} л.с.");
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
+            // Задание 1
 
         }
     }
