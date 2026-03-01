@@ -37,7 +37,22 @@ namespace Pr14
                     Console.WriteLine("\n1 - Показать все записи\n2 - Показать запись по номеру\n3 - Поиск по владельцу\n0 - Выход");
                     Console.Write("Ваш выбор: ");
                     int choice = Convert.ToInt32(Console.ReadLine());
-
+                    switch (choice)
+                    {
+                        case 1:
+                            All(yachts);
+                            break;
+                        case 2:
+                            Console.Write("Введите номер записи: ");
+                            int index = Convert.ToInt32(Console.ReadLine()) - 1;
+                            Num(yachts, index);
+                            break;
+                        case 0:
+                            return;
+                        default:
+                            Console.WriteLine("Неверный выбор.");
+                            break;
+                    }
                 }
                 catch (FileNotFoundException ex1)
                 {
@@ -73,6 +88,19 @@ namespace Pr14
                 };
             }
             return yachts;
+        }
+
+        static void All(Yacht[] yachts)
+        {
+            foreach (Yacht yacht in yachts)
+            {
+                Console.WriteLine(yacht);
+            }
+        }
+
+        static void Num(Yacht[] yachts, int index)
+        {
+            Console.WriteLine(yachts[index]);
         }
     }
 }
