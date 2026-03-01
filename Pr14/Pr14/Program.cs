@@ -87,6 +87,7 @@ namespace Pr14
                     price = Convert.ToDouble(parts[4]),
                 };
             }
+
             return yachts;
         }
 
@@ -101,6 +102,25 @@ namespace Pr14
         static void Num(Yacht[] yachts, int index)
         {
             Console.WriteLine(yachts[index]);
+        }
+
+        static void Owner(Yacht[] yachts, string three)
+        {
+            bool found = false;
+            {
+                foreach (Yacht yacht in yachts)
+                {
+                    if (yacht.owner.StartsWith(three, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine(yacht);
+                        found = true;
+                    }
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Ничего не найдено.");
+            }
         }
     }
 }
