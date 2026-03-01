@@ -47,6 +47,11 @@ namespace Pr14
                             int index = Convert.ToInt32(Console.ReadLine()) - 1;
                             Num(yachts, index);
                             break;
+                        case 3:
+                            Console.Write("Введите первые 3 буквы владельца: ");
+                            string threesym = Console.ReadLine();
+                            Owner(yachts, threesym);
+                            break;
                         case 0:
                             return;
                         default:
