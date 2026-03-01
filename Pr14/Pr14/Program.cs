@@ -74,5 +74,13 @@ namespace Pr14
             }
             return yachts;
         }
+
+        static void All(Yacht[] yachts)
+        {
+            foreach (Yacht yacht in yachts)
+            {
+                Console.WriteLine(yacht);
+            }
+        }
     }
 }
