@@ -19,7 +19,10 @@ namespace Pr18
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Task1 task1 = new Task1();
+            this.Hide();
+            task1.ShowDialog();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,7 +42,12 @@ namespace Pr18
 
         private void button5_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Вы действительно хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
