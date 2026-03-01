@@ -29,7 +29,29 @@ namespace Pr14
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                try
+                {
+                    Yacht[] yachts = Textfile("file.txt");
+                    Console.WriteLine("\n1 - Показать все записи\n2 - Показать запись по номеру\n3 - Поиск по владельцу\n0 - Выход");
+                    Console.Write("Ваш выбор: ");
+                    int choice = Convert.ToInt32(Console.ReadLine());
 
+                }
+                catch (FileNotFoundException ex1)
+                {
+                    Console.WriteLine(ex1.Message);
+                }
+                catch (FormatException ex2)
+                {
+                    Console.WriteLine(ex2.Message);
+                }
+                catch (Exception ex3)
+                {
+                    Console.WriteLine(ex3.Message);
+                }
+            }
         }
 
         static Yacht[] Textfile(string namefile)
