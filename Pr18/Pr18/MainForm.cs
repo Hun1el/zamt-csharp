@@ -30,12 +30,15 @@ namespace Pr18
             Task2 task2 = new Task2();
             this.Hide();
             task2.ShowDialog();
-            this.Show();
+            this.Show(); 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Task3 task3 = new Task3();
+            this.Hide();
+            task3.ShowDialog();
+            this.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
