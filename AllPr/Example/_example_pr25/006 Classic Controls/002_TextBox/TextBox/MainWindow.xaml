@@ -1,0 +1,40 @@
+﻿<Window x:Class="TextBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TextBox Sample" Height="350" Width="525">
+    <Grid Margin="5">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--
+            SpellCheck.IsEnabled="True" - проверка ошибок.
+            SelectionChanged - событие при смене выделенного текста.
+        -->
+        <TextBox  Name="txt" 
+                  VerticalScrollBarVisibility="Auto" 
+                  TextWrapping="WrapWithOverflow" 
+                  AcceptsReturn="True"
+                  SelectionChanged="txt_SelectionChanged"
+                  SpellCheck.IsEnabled="True">
+            The Windows Presentation Foundation (or WPF) is a graphical subsystem for rendering user interfaces in Windows-based applications. WPF, previously known as "Avalon", was initially released as part of .NET Framework 3.0. Designed to remove dependencies on the aging GDI subsystem, WPF is built on DirectX, which provides hardware acceleration and enables modern user interface (UI) features such as transparency, gradients, and transforms. WPF provides a consistent programming model for building applications and provides a clear separation between the user interface and the business logic.
+            WPF also offers a new markup language, known as XAML, which is an alternative means for defining UI elements and relationships with other UI elements.[1] A WPF application can be deployed on the desktop or hosted in a web browser. It also enables rich control, design, and development of the visual aspects of Windows programs. It aims to unify a number of application services: user interface, 2D and 3D drawing, fixed and adaptive documents, advanced typography, vector graphics, raster graphics, animation, data binding, audio and video.
+        </TextBox>
+
+        <ScrollViewer Foreground="Blue" 
+                      Grid.Row="1" 
+                      Margin="0,10,0,5" 
+                      VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock>Current selection:</TextBlock>
+                <!--TextWrapping="Wrap" - текст, который не поместился по ширине элемента будет перенесен-->
+                <TextBlock  Name="txtSelection" TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
+
+

@@ -1,0 +1,15 @@
+﻿<Window x:Class="_05_UniformGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Контейнер компоновки UniformGrid" Height="350" Width="525">
+    
+    <!--UniformGrid - Предоставляет способ размещения элементов в сетки, 
+    при котором все ячейки имеют одинаковый размер.-->
+    
+    <UniformGrid Rows="2" Columns="2">
+        <TextBlock Background="LightGoldenrodYellow" Padding="10" Margin="10">TextBlock 1</TextBlock>
+        <TextBlock Background="LightBlue" Padding="10" Margin="10">TextBlock 2</TextBlock>
+        <TextBlock Background="LightGray" Padding="10" Margin="10">TextBlock 3</TextBlock>
+        <TextBlock Background="LightSteelBlue" Padding="10" Margin="10">TextBlock 4</TextBlock>
+    </UniformGrid>
+</Window>

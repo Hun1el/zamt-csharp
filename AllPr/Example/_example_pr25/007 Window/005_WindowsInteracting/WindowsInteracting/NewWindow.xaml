@@ -1,0 +1,8 @@
+﻿<Window x:Class="WindowsInteracting.NewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewWindow" Height="300" Width="300">
+    <Grid>
+        <Label Name="LabelResult" HorizontalAlignment="Center" VerticalAlignment="Center">  </Label>
+    </Grid>
+</Window>

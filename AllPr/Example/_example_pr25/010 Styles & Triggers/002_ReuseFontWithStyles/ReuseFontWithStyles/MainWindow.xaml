@@ -1,0 +1,34 @@
+﻿<Window x:Class="ReuseFontWithStyles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Использование стиля" Height="350" Width="525">
+
+    <Window.Resources>
+        <!--Объявление стиля c ключом MyButtonStyle-->
+        <Style x:Key="MyButtonStyle">
+            <Setter Property="Button.FontFamily" Value="Times New Roman" />
+            <Setter Property="Button.FontSize" Value="18" />
+            <Setter Property="Button.FontWeight" Value="Bold" />
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Margin="5">
+        <Button Padding="5" Margin="5" FontSize="24"
+            Style="{StaticResource MyButtonStyle}">
+            Кнопка со стилем
+        </Button>
+
+        <TextBlock Margin="5">Статический контент</TextBlock>
+
+        <Button Padding="5" Margin="5">Обычная кнопка</Button>
+
+        <TextBlock Margin="5">Статический контент</TextBlock>
+
+        <!--Каждый элемент управления WPF может использовать один стиль.
+        (Свойство Style определено в базовом классе FrameworlElement)-->
+        <Button Padding="5" Margin="5"
+            Style="{StaticResource MyButtonStyle}">
+            Кнопка со стилем
+        </Button>
+    </StackPanel>
+</Window>

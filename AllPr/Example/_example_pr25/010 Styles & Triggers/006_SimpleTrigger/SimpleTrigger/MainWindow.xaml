@@ -1,0 +1,57 @@
+﻿<Window x:Class="SimpleTrigger.MainWindow"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Использование триггеров" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="BigFontButtonStyle">
+            
+            <Style.Setters>
+                <Setter Property="Control.FontFamily" Value="Times New Roman" />
+                <Setter Property="Control.FontSize" Value="18" />
+            </Style.Setters>
+            
+            <!--Триггеры-->
+            <Style.Triggers>
+                
+                <!--Если элемент в фокусе значение Foreground устанавливается как DarkRed-->
+                <Trigger Property="Control.IsFocused" Value="True">
+                    <Setter Property="Control.Foreground" Value="Yellow" />
+                </Trigger>
+
+                <!--Если курсор находится над элементом, устанавливаются свойства Foreground и FontWeight-->
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Foreground" Value="Green" />
+                    <Setter Property="Control.FontWeight" Value="Bold" />
+                </Trigger>
+
+                <!--Если курсор находится над элементом, устанавливаются свойства Foreground и FontWeight-->
+                <Trigger Property="Button.IsPressed" Value="True">
+                    <Setter Property="Control.Foreground" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Margin="5">
+        
+        <Button Padding="5" 
+                Margin="5"
+                Style="{StaticResource BigFontButtonStyle}">Кнопка со стилями и триггерами
+        </Button>
+        
+        <TextBlock Margin="5">Обычный контент.</TextBlock>
+        
+        <Button Padding="5" 
+                Margin="5">
+            Обычная кнопка
+        </Button>
+
+        <TextBlock Margin="5">Обычный контент.</TextBlock>
+        <Button Padding="5"
+                Margin="5"
+                Style="{StaticResource BigFontButtonStyle}">
+            Кнопка со стилями и триггерами
+        </Button>
+    </StackPanel>
+</Window>

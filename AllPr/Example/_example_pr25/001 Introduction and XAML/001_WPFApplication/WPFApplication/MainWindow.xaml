@@ -1,0 +1,42 @@
+﻿<!--x:Class="WPFApplication.MainWindow" - определение класса с кодом окна
+    
+    Подключения пространств имен для создания элементов управления в разметке.
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"-->
+<Window x:Class="WPFApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Главное окно" 
+        Height="373"
+        Width="574">
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.058"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <!--Блок текста-->
+        <TextBlock Width="100" 
+                   Height="24" 
+                   Margin="210,93,207,202" 
+                   Foreground="Red"
+                   Text="Введите свое имя">
+        </TextBlock>
+
+        <!--Поле ввода-->
+        <TextBox Name="textBoxName"
+                 Width="100" 
+                 Height="24" 
+                 Margin="210,143,207,152" Text="" AcceptsTab="False">
+        </TextBox>
+        <!--Кнопка-->
+        <Button Width="100" 
+                Height="24" 
+                Content="Ok" 
+                Margin="210,186,207,109"
+                Click="Button_Click"></Button>
+    </Grid>
+</Window>

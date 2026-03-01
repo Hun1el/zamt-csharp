@@ -1,0 +1,16 @@
+﻿<Window x:Class="_02_StackPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Контейнер компонвоки StackPanel" Height="350" Width="525">
+    
+    <!--StackPanel - Располагает дочерние элементы в одну строку, которую можно 
+    ориентировать по горизонтали или по вертикали -->
+    
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Background="LightGoldenrodYellow" Padding="10" Margin="10">TextBlock 1</TextBlock>
+        <TextBlock Background="LightBlue" Padding="10" Margin="10">TextBlock 2</TextBlock>
+        <TextBlock Background="LightGray" Padding="10" Margin="10">TextBlock 3</TextBlock>
+        <TextBlock Background="LightSteelBlue" Padding="10" Margin="10">TextBlock 4</TextBlock>
+        <TextBlock Background="LightCoral" Padding="10" Margin="10">TextBlock 5</TextBlock>
+    </StackPanel>
+</Window>

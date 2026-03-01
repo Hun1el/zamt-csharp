@@ -1,0 +1,10 @@
+﻿<Window x:Class="ApplicationResource.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ресурсы Application" Height="350" Width="525">
+    <StackPanel>
+        <Button Height="23" Click="Button_Click">Запустить Window 1</Button>
+        <Button Height="23" Click="Button_Click_1">Запустить Window 2</Button>
+        <Button Height="23" Click="Button_Click_2">Найти ресурс</Button>
+    </StackPanel>
+</Window>

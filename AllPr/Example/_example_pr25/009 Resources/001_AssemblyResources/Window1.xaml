@@ -1,0 +1,11 @@
+﻿<Window x:Class="AssemblyResources.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Ресурсы сборки" Height="374" Width="312">
+    <StackPanel>
+        <Button Click="cmdPlay_Click" Padding="5">Next</Button>
+        <Image Name="img" Source="Images/Blue hills.jpg"></Image>
+        <Button Height="23" Name="buttonGetResource" Click="buttonGetResource_Click">Извлечь ресурс</Button>
+        <Button Height="23" Name="buttonGetAllResources" Click="buttonGetAllResources_Click">Получить все ресурсы</Button>
+    </StackPanel>
+</Window>

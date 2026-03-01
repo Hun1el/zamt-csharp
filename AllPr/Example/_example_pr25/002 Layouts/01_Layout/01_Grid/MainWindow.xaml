@@ -1,0 +1,40 @@
+﻿<Window x:Class="_01_Grid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Контейнер компоновки Grid" Height="350" Width="525">
+    <!--
+        Grid - Определяет гибкую область сетки, состоящую из столбцов и строк.
+    
+        ShowGridLines="True" - отобразить сетку контейнера компоновки при запуске приложения.
+    -->
+
+    <Grid ShowGridLines="True">
+        
+        <!--Определение колонок таблицы-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!--Определение строк таблицы-->
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Padding="10" Margin="20" Background="LightCoral">
+            Grid.Row="0" Grid.Column="0"</TextBlock>
+
+        <TextBlock Grid.Row="0" Grid.Column="1"
+                   Padding="10" Margin="20" Background="LightCyan">
+            Grid.Row="0" Grid.Column="1"</TextBlock>
+
+        <!-- можно использовать еще RowSpan -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                   Padding="10" Margin="20" Background="LightGreen">
+            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+        </TextBlock>
+
+    </Grid>
+</Window>

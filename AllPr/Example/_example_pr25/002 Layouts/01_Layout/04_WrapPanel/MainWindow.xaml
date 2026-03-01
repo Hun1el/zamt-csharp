@@ -1,0 +1,18 @@
+﻿<Window x:Class="_04_WrapPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Контейнер компоновик WrapPanel" Height="350" Width="525">
+    <!--WrapPanel - Размещает дочерние элементы последовательно слева направо, 
+    разбивая содержимое до следующей строки на краю содержащего окна. 
+    Последующее размещение происходит последовательно сверху вниз или справа налево, 
+    в зависимости от значения свойства Orientation. -->
+    <WrapPanel Orientation="Vertical">
+        <TextBlock Background="LightGoldenrodYellow" Padding="10" Margin="10">TextBlock 1</TextBlock>
+        <TextBlock Background="LightBlue" Padding="10" Margin="10">TextBlock 2</TextBlock>
+        <TextBlock Background="LightGray" Padding="10" Margin="10">TextBlock 3</TextBlock>
+        <TextBlock Background="LightSteelBlue" Padding="10" Margin="10">TextBlock 4</TextBlock>
+        <TextBlock Background="LightCoral" Padding="10" Margin="10">TextBlock 5</TextBlock>
+        <TextBlock Background="Khaki" Padding="10" Margin="10">TextBlock 6</TextBlock>
+        <TextBlock Background="LightSeaGreen" Padding="10" Margin="10">TextBlock 7</TextBlock>
+    </WrapPanel>
+</Window>

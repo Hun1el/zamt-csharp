@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfLocalization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:WpfLocalization"
+        Title="Локализация приложения" Height="350" Width="525">
+    <StackPanel Margin="10">
+        <TextBlock Text="{x:Static p:LocalizeResources.FNLabel}"></TextBlock>
+        <TextBox></TextBox>
+        <TextBlock Text="{x:Static p:LocalizeResources.LNLabel}"></TextBlock>
+        <TextBox></TextBox>
+        <TextBlock></TextBlock>
+        <Button Content="{x:Static p:LocalizeResources.BtnLabel}"></Button>
+    </StackPanel>
+</Window>

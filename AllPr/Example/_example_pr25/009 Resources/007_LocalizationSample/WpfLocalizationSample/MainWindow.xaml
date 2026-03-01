@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfLocalizationSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:LocalizatorHelper;assembly=LocalizatorHelper"
+        Title="Локализация WPF приложения" Height="350" Width="525">
+    
+    <Window.Resources>
+        <l:LocalisationHelper x:Key="helper"></l:LocalisationHelper>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Menu>
+            <MenuItem Header="File"></MenuItem>
+            <MenuItem Header="Language">
+                <MenuItem Header="Русский" Click="RuMenuItem_Click"></MenuItem>
+                <MenuItem Header="English" Click="EnMenuItem_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        <StackPanel Grid.Row="1" Margin="10">
+            <TextBlock Text="{Binding Source={StaticResource helper}, Path=[MainWindowRes.FN]}"></TextBlock>
+            <TextBox></TextBox>
+            <TextBlock Text="{Binding Source={StaticResource helper}, Path=[MainWindowRes.LN]}"></TextBlock>
+            <TextBox></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

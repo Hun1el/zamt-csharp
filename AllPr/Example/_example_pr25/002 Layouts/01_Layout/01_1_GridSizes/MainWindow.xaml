@@ -1,0 +1,22 @@
+﻿<Window x:Class="_01_1_GridSizes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Высота строк и колонок в Grid" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="350" d:DesignWidth="525" SizeToContent="Width">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--Высота строки 100-->
+            <RowDefinition Height="100"></RowDefinition>
+            <!--Высота строки изменяется пропорционально с изменением окна-->
+            <RowDefinition Height="*"></RowDefinition>
+            <!--Высота равна высоте самого большого элемента определенного в строке-->
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0"
+                   Background="LightBlue" Width="1000">TextBlock 1 (Height="100")</TextBlock>
+        <TextBlock Grid.Row="1"
+                   Background="LightGreen">TextBlock 2 (Height="*")</TextBlock>
+        <TextBlock Grid.Row="2"
+                   Background="LightCyan" Height="50">TextBlock 3 (Height="Auto")</TextBlock>
+    </Grid>
+</Window>

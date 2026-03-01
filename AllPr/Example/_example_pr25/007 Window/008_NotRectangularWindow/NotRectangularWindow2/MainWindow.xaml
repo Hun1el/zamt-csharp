@@ -1,0 +1,23 @@
+﻿<Window x:Class="NotRectangularWindow2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Окно не правильной формы" Height="350" Width="525" 
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    
+    <Border Background="LightBlue" 
+            CornerRadius="0,20,20,20" 
+            BorderThickness="2" 
+            BorderBrush="Black">
+        <Grid>
+            <Button Content="X" 
+                    Height="25" 
+                    Name="buttonClose" 
+                    Width="29" 
+                    Margin="6,0,455,270" 
+                    Click="buttonClose_Click" />
+        </Grid>
+    </Border>
+</Window>

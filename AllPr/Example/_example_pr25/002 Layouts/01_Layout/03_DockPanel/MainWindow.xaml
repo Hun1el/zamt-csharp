@@ -1,0 +1,39 @@
+﻿<Window x:Class="LayoutSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Контейнер компоновки DockPanel" Height="350" Width="525">
+    <!--
+        DockPanel - определяет область, в которой можно упорядочить дочерние элементы 
+        горизонтально или вертикально относительно друг друга. 
+    
+        DockPanel.Dock - указывает, к какой стороне контейнера следует привязать контрол.
+    -->
+    <DockPanel LastChildFill="True">
+
+        <TextBlock DockPanel.Dock="Top"
+                   Background="LightBlue"
+                   Padding="10">
+            DockPanel.Dock="Top"</TextBlock>
+
+        <TextBlock DockPanel.Dock="Top"
+                   Background="LightBlue" 
+                   Padding="10">
+            Toolbar</TextBlock>
+        
+        <TextBlock DockPanel.Dock="Bottom"
+                   Background="LightGreen" 
+                   Padding="10">
+            DockPanel.Dock="Bottom"</TextBlock>
+
+        <TextBlock DockPanel.Dock="Right"
+                   Background="LightCyan"
+                   Padding="10">
+            DockPanel.Dock="Right"</TextBlock>
+
+        <TextBlock DockPanel.Dock="Left"
+                   Background="LightCoral"
+                   Padding="10">
+    
+            DockPanel.Dock="Left"</TextBlock>
+    </DockPanel>
+</Window>

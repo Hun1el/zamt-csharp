@@ -1,0 +1,64 @@
+﻿<Window x:Class="_007_Popup.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Настройка всплывающей подсказки (Popup)"
+        Height="300"
+        Width="300">
+
+    <Grid Margin="10">
+
+        <TextBlock TextWrapping="Wrap">
+            Этот текст показывает, как можно в TextBlock создать 
+            <!--Run - декорирует и форматирует текст.-->
+            <Run TextDecorations="Underline" MouseEnter="run_MouseEnter">
+                ссылку
+            </Run>.
+        </TextBlock>
+
+        <!--
+            Popup - Всплывающее окно как и ToolTip. 
+            Отличия от ToolTip:
+            1) Отображается и прячется Popup
+            2) Имеет свойство PopupAnimation.
+            3) Popup может принимать фокус, таким образом, в него можно помещать другие элементы управления.
+            
+            
+            Свойства:
+                StaysOpen - Оставлять открытым после открытия.
+                Placement="Mouse" - относительно чего будет положение окна.
+                PopupAnimation="Slide" - Тип анимация первого отображения.
+                AllowsTransparency="True" - Поддержка прозрачности.
+        -->
+        <Popup Name="popLink"
+               StaysOpen="False"
+               Placement="Mouse"
+               MaxWidth="200"
+               PopupAnimation="Scroll"
+               AllowsTransparency="True">
+
+            <Border BorderThickness="3" 
+                    CornerRadius="3" 
+                    BorderBrush="#AA323232" 
+                    Background="#AA000000">
+
+                <TextBlock Margin="10" TextWrapping="Wrap" Foreground="White">
+                    
+                    Ссылка в текстовом блоке.
+                    
+                    <!--
+                        Hyperlink - ссылка.
+                        Свойство NavigateUri - содержит ссылку на ресурс.
+                    -->
+                    <Hyperlink Foreground="#009BFF" 
+                               NavigateUri="http://en.wikipedia.org/wiki/Term"
+                               Click="lnk_Click">
+                        Wikipedia
+                    </Hyperlink>
+
+                </TextBlock>
+
+            </Border>
+
+        </Popup>
+    </Grid>
+</Window>

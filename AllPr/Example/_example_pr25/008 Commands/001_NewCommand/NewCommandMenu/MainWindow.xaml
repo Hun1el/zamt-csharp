@@ -1,0 +1,27 @@
+﻿<Window x:Class="NewCommandMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Использование команд" Height="254" Width="496">
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="New"
+                        Executed="CommandBinding_Executed">
+        </CommandBinding>
+    </Window.CommandBindings>
+    
+    <StackPanel>
+        
+        <Menu>
+            <MenuItem Header="File">
+                <!--В случае с командой для пункта меню, можно не указывать текст самого пункта, так как он будет извлечен из команды.-->
+                <MenuItem Command="New"></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        <Button Content="Кнопка" 
+                Command="New" 
+                Margin="0, 30, 0, 30"
+                Width="75"></Button>
+        
+    </StackPanel>
+</Window>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="GridSpliter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Примеры использования GridSplitter" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Background="LightGoldenrodYellow" Padding="10">
+            TextBlock 1</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Background="LightGray" Padding="10">
+            TextBlock 2</TextBlock>
+        
+        <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Width="3"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Black"></GridSplitter>
+        
+        <!--Вложенный Grid-->
+        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Grid.Column="0" Background="LightGreen" Padding="10">
+            TextBlock 1</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Background="LightBlue" Padding="10">
+            TextBlock 2</TextBlock>
+
+            <GridSplitter Grid.Row="1" Grid.Column="0" Height="3"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Black"></GridSplitter>
+        </Grid>
+    </Grid>
+</Window>

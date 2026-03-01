@@ -1,0 +1,22 @@
+﻿<Window x:Class="SystemResources.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Системные ресурсы" Height="73" Width="299">
+    <Grid>
+        <!--Применение системного значения цвета-->
+        <Label Foreground="{x:Static SystemColors.WindowTextBrush}">Hello world</Label>
+        
+        <!--Для того что бы контрол реагировал на изменение настроек системы. Значение должно быть добавлено
+        как динамический ресурс. Все классы SystemXXX имеют дополнительные свойства, которые возвращают ссылки на ресурсы
+        Все эти свойства называются так же как и обычные но в конец добавляется слово Key-->
+        <Label Margin="100,0,0,0"
+               Foreground="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}">
+            Hello world</Label>
+        
+        <!--Для Label значение задается из code behind-->
+        <Label Name="Label1"
+               Margin="200,0,0,0">
+            Hello world
+        </Label>
+    </Grid>
+</Window>

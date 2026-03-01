@@ -1,0 +1,59 @@
+﻿<Window x:Class="_007_Expander.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Expander Samples" Height="355" Width="330">
+    
+    <StackPanel>
+        
+        <!--
+            Expander - Представляет элемент управления, отображающий
+            заголовок со свертываемым окном, отображающим содержимое.
+        -->
+        <Expander Header="Expander 1"
+                  IsExpanded="False" 
+                  Margin="5" 
+                  Padding="3" 
+                  BorderBrush="Black">
+            
+            <Button Content="Button" />
+            
+        </Expander>
+
+        <Expander Header="Expander 2" 
+                  IsExpanded="True" 
+                  MaxHeight="200" 
+                  Margin="5" 
+                  Padding="3" 
+                  BorderBrush="Black">
+            
+            <TextBox TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto">
+                Windows Presentation Foundation (WPF, кодовое название — Avalon)
+                — графическая (презентационная) подсистема в составе
+                .NET Framework 3.0, имеющая прямое отношение к XAML. WPF вместе с
+                .NET Framework 3.0 предустановлена в Windows Vista, а также
+                доступна для установки в Windows XP SP2 и Windows Server 2003.
+                
+                Это первое реальное обновление технологической среды пользовательского
+                интерфейса со времени выпуска Windows 95. Оно включает новое ядро,
+                которое должно заменить GDI и GDI+, используемые в нынешней Windows-платформе.
+                WPF представляет собой высокоуровневый объектно-ориентированный функциональный
+                слой (framework), позволяющий создавать 2D- и 3D-интерфейсы. Сейчас его можно
+                назвать альтернативным вариантом Adobe Flash и Java-апплетам, используемым
+                в Web-разработке применительно к Windows Forms. Но в будущем WPF должен
+                объединить Windows и Web-разработку (в том числе AJAX).
+            </TextBox>
+            
+        </Expander>
+
+        <Expander ExpandDirection="Right"  
+                  Margin="5" 
+                  Padding="3"
+                  Header="Expander 3"
+                  IsExpanded="False"
+                  BorderBrush="Black">
+            
+            <Button Height="23">Test Button</Button>
+            
+        </Expander>
+    </StackPanel>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="CommandParameters.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="85" Width="523">
+    <StackPanel>
+        <!--При вызове команд будут передаватся строковые параметры-->
+        <Button Command="New" Name="btn"  CommandParameter="btn1">Первая кнопка</Button>
+        <Button Command="New" CommandParameter="btn2">Вторая кнопка</Button>
+    </StackPanel>
+</Window>

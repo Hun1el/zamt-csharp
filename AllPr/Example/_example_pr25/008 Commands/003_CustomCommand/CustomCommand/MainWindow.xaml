@@ -1,0 +1,16 @@
+﻿<Window x:Class="CustomCommand.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CustomCommand"
+        Title="Пользовательские команды" Height="350" Width="525">
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="local:DataCommandsLibrary.Requery" 
+                        Executed="CommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    
+    <Grid>
+        <Button Command="local:DataCommandsLibrary.Requery" 
+                Margin="100">Повторный зарос (Ctrl + R)</Button>
+    </Grid>
+</Window>

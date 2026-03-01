@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsInteracting_smp1", "WindowsInteracting\WindowsInteracting_smp1.csproj", "{F686F0D6-DD86-4B98-B19D-CF7332947449}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsInteracting_smp2", "WindowInteractin2\WindowsInteracting_smp2.csproj", "{CEFACF9B-4EF1-4F2C-9C76-0C895A22B123}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F686F0D6-DD86-4B98-B19D-CF7332947449}.Debug|x86.ActiveCfg = Debug|x86
+		{F686F0D6-DD86-4B98-B19D-CF7332947449}.Debug|x86.Build.0 = Debug|x86
+		{F686F0D6-DD86-4B98-B19D-CF7332947449}.Release|x86.ActiveCfg = Release|x86
+		{F686F0D6-DD86-4B98-B19D-CF7332947449}.Release|x86.Build.0 = Release|x86
+		{CEFACF9B-4EF1-4F2C-9C76-0C895A22B123}.Debug|x86.ActiveCfg = Debug|x86
+		{CEFACF9B-4EF1-4F2C-9C76-0C895A22B123}.Debug|x86.Build.0 = Debug|x86
+		{CEFACF9B-4EF1-4F2C-9C76-0C895A22B123}.Release|x86.ActiveCfg = Release|x86
+		{CEFACF9B-4EF1-4F2C-9C76-0C895A22B123}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

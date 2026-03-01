@@ -1,0 +1,39 @@
+﻿<Window x:Class="_009_ImageList.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ListBox Sample"
+        Height="300"
+        Width="300">
+
+    <!--Если в ListBox помещен объект производный от UIElement, то этот элемент визуализируется, 
+        иначе для объекта вызывается метод ToString() и полученная строка выводится как элемент списка
+    
+        SelectionMode - Режим выбора элементов в списке:
+            Single   - может быть выбран только один элемент.
+            Multiple - может быть выбрано несколько элементов, при этом для того что бы произвести выбор
+                       или снять выбор нужно сделать левый клик по элементу.
+            Extended - множественный выбор производится с зажатой клавишей Ctrl или Shift
+        
+    -->
+    <ListBox Margin="5"
+             SelectionMode="Extended"
+             Name="lst">
+
+        <StackPanel Orientation="Horizontal">
+            <Image Source="1.png"  Width="64" Height="64" />
+            <Label VerticalContentAlignment="Center" Content="Первый рисунок" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Image Source="2.png" Width="64" Height="64" />
+            <Label VerticalContentAlignment="Center" Content="Второй рисунок" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Image Source="3.png" Width="64" Height="64" />
+            <Label VerticalContentAlignment="Center" Content="Третий рисунок" />
+        </StackPanel>
+
+    </ListBox>
+
+</Window>

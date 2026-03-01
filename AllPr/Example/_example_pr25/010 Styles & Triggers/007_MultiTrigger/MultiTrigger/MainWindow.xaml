@@ -1,0 +1,38 @@
+﻿<Window x:Class="MultiTrigger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Использование MultiTrigger" Height="350" Width="525">
+    
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle">
+            <Style.Triggers>
+                <MultiTrigger>
+                    
+                    <!--Список условий-->
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Control.IsFocused" Value="True"></Condition>
+                        <Condition Property="Control.IsMouseOver" Value="True"></Condition>
+                    </MultiTrigger.Conditions>
+                    
+                    <!--Список изменений, которые вступят в силу, если все условия выполнятся-->
+                    <MultiTrigger.Setters>
+                        <Setter Property="Control.Foreground" Value="DarkBlue"></Setter>
+                        <Setter Property="Control.FontSize" Value="20"></Setter>
+                    </MultiTrigger.Setters>
+                    
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <StackPanel>
+        
+        <Button Name="Button1" Style="{StaticResource MyButtonStyle}" Margin="20">
+            A Button
+        </Button>
+        <Button Name="Button2" Style="{StaticResource MyButtonStyle}" Margin="20">
+            A Button
+        </Button>
+        
+    </StackPanel>
+</Window>

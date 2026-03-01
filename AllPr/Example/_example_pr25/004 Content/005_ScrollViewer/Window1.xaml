@@ -1,0 +1,123 @@
+﻿<Window x:Class="_004_ScrollViewer.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" 
+        Height="213" 
+        Width="300">
+    
+    <DockPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    DockPanel.Dock="Top"
+                    Margin="0,2,0,2">
+            
+            <Button Name="button1" Click="button1_Click" ToolTip="Line down">
+                <Image Source="down.png" Width="32" />
+            </Button>
+            
+            <Button Name="button2" Click="button2_Click" ToolTip="Line up">
+                <Image Source="up.png" Width="32" />
+            </Button>
+            
+            <Separator Margin="64,0,64,0" />
+            
+            <Button Name="button3" Click="button3_Click" ToolTip="Page down">
+                <Image Source="page_down.png" Width="32" />
+            </Button>
+            
+            <Button Name="button4" Click="button4_Click" ToolTip="Page up">
+                <Image Source="page_up.png" Width="32" />
+            </Button>
+        </StackPanel>
+        
+        <!--
+            ScrollViewer - Представляет прокручиваемую область, 
+            в которой могут содержаться другие видимые элементы. 
+        -->
+        <ScrollViewer Name="scroller">
+            <Grid Margin="0,10,0,0" Focusable="False">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" MinWidth="110" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="3"
+                       VerticalAlignment="Center"
+                       Content="Home:" />
+                <TextBox Grid.Row="0"
+                         Grid.Column="1"
+                         Margin="3"
+                         Height="Auto"
+                         VerticalAlignment="Center" />
+
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       Margin="3"
+                       VerticalAlignment="Center"
+                       Content="Network:" />
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         Margin="3"
+                         Height="Auto"
+                         VerticalAlignment="Center" />
+
+                <Label Grid.Row="2"
+                       Grid.Column="0"
+                       Margin="3"
+                       VerticalAlignment="Center"
+                       Content="Network:" />
+                <TextBox Grid.Row="2"
+                         Grid.Column="1"
+                         Margin="3"
+                         Height="Auto"
+                         VerticalAlignment="Center" />
+
+                <Label Grid.Row="3"
+                       Grid.Column="0"
+                       Margin="3"
+                       VerticalAlignment="Center"
+                       Content="Network:" />
+                <TextBox Grid.Row="3"
+                         Grid.Column="1"
+                         Margin="3"
+                         Height="Auto"
+                         VerticalAlignment="Center" />
+
+                <Label Grid.Row="4"
+                       Grid.Column="0"
+                       Margin="3"
+                       VerticalAlignment="Center"
+                       Content="Network:" />
+                <TextBox Grid.Row="4"
+                         Grid.Column="1"
+                         Margin="3"
+                         Height="Auto"
+                         VerticalAlignment="Center" />
+
+                <Label Grid.Row="5"
+                       Grid.Column="0"
+                       Margin="3"
+                       VerticalAlignment="Center"
+                       Content="Network:" />
+                <TextBox Grid.Row="5"
+                         Grid.Column="1"
+                         Margin="3"
+                         Height="Auto"
+                         VerticalAlignment="Center" />
+            </Grid>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

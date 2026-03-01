@@ -1,0 +1,26 @@
+﻿<Window x:Class="_005_GroupBox.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GroupBox Sample"
+        Height="177" 
+        Width="207">
+    
+    <Grid>
+        <!--
+            GroupBox - используется для группирования элементов управления.
+            Контролы RadioButton групируются, когда находятся в одном контейнере компоновки.
+        -->
+        <GroupBox Header="GroupBox" Margin="10" VerticalAlignment="Top">
+            <StackPanel>
+                
+                <RadioButton Content="Radio button 1" Margin="3" />
+                <RadioButton Content="Radio button 2" Margin="3" />
+                <RadioButton Content="Radio button 3" Margin="3" />
+
+                <Button Width="100" HorizontalAlignment="Left" Content="Применить" Margin="3" Padding="3" />
+                
+            </StackPanel>
+        </GroupBox>
+        
+    </Grid>
+</Window>

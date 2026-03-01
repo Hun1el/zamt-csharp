@@ -1,0 +1,10 @@
+﻿<Window x:Class="BackgroundWorkerSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="107" Width="525">
+    <Grid>
+        <ProgressBar Height="10" HorizontalAlignment="Left" Margin="12,12,0,0" Name="progressBar1" VerticalAlignment="Top" Width="479" Maximum="100"  />
+        <Button Content="Start Background Worker" Height="23" HorizontalAlignment="Left" Margin="12,30,0,0" Name="buttonStartWorker" VerticalAlignment="Top" Width="410" Click="buttonStartWorker_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="428,30,0,0" Name="buttonCancel" VerticalAlignment="Top" Width="63" Click="buttonCancel_Click" />
+    </Grid>
+</Window>

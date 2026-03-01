@@ -1,0 +1,10 @@
+﻿<Application x:Class="ApplicationResource.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ImageBrush x:Key="TileBrush" TileMode="Tile"
+                ViewportUnits="Absolute" Viewport="0 0 32 32"
+                ImageSource="happyface.jpg" Opacity="0.3"></ImageBrush>
+    </Application.Resources>
+</Application>

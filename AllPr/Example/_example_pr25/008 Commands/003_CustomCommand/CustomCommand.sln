@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_CustomCommand", "CustomCommand\01_CustomCommand.csproj", "{DF715340-11EA-4045-AD37-BD6B25772659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_CustomCommand", "02_CustomCommand\02_CustomCommand.csproj", "{D57206A9-3C42-4F0A-BECD-94BD62DB502B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_CustomCommand", "03_CustomCommand\03_CustomCommand.csproj", "{484712AC-A5FF-4CD8-A54E-0BEC755BF700}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF715340-11EA-4045-AD37-BD6B25772659}.Debug|x86.ActiveCfg = Debug|x86
+		{DF715340-11EA-4045-AD37-BD6B25772659}.Debug|x86.Build.0 = Debug|x86
+		{DF715340-11EA-4045-AD37-BD6B25772659}.Release|x86.ActiveCfg = Release|x86
+		{DF715340-11EA-4045-AD37-BD6B25772659}.Release|x86.Build.0 = Release|x86
+		{D57206A9-3C42-4F0A-BECD-94BD62DB502B}.Debug|x86.ActiveCfg = Debug|x86
+		{D57206A9-3C42-4F0A-BECD-94BD62DB502B}.Debug|x86.Build.0 = Debug|x86
+		{D57206A9-3C42-4F0A-BECD-94BD62DB502B}.Release|x86.ActiveCfg = Release|x86
+		{D57206A9-3C42-4F0A-BECD-94BD62DB502B}.Release|x86.Build.0 = Release|x86
+		{484712AC-A5FF-4CD8-A54E-0BEC755BF700}.Debug|x86.ActiveCfg = Debug|x86
+		{484712AC-A5FF-4CD8-A54E-0BEC755BF700}.Debug|x86.Build.0 = Debug|x86
+		{484712AC-A5FF-4CD8-A54E-0BEC755BF700}.Release|x86.ActiveCfg = Release|x86
+		{484712AC-A5FF-4CD8-A54E-0BEC755BF700}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

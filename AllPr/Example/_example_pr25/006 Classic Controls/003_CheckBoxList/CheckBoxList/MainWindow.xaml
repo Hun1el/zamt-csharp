@@ -1,0 +1,28 @@
+﻿<Window x:Class="CheckBoxList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CheckBox Samples" Height="350" Width="525">
+    <Grid Margin="10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--CheckBox.Click - определение обработчика для всех элементов управления, которые находятся в ListBox
+            SelectionChanged - обработчик на смену выделения элемента в ListBox
+        -->
+        <ListBox Name="lst" 
+                 SelectionChanged="lst_SelectionChanged"
+                 CheckBox.Click="lst_SelectionChanged">
+            <CheckBox Margin="3">Option 1</CheckBox>
+            <CheckBox Margin="3">Option 2</CheckBox>
+            <CheckBox Margin="3">Option 3</CheckBox>
+        </ListBox>
+        <StackPanel Grid.Row="1" Margin="0,10,0,0">
+            <TextBlock>Текущий выбор:</TextBlock>
+            <TextBlock  Name="txtSelection" TextWrapping="Wrap"></TextBlock>
+            <Button Margin="0,10,0,0" Click="cmd_CheckAllItems">Проверить все элементы</Button>
+        </StackPanel>
+    </Grid>
+</Window>

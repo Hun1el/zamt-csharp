@@ -1,0 +1,8 @@
+﻿<Window x:Class="WindowsTracker.Document"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Документ" Height="300" Width="300" Closed="Window_Closed">
+    <Grid>
+        
+    </Grid>
+</Window>

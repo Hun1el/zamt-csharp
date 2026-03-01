@@ -1,0 +1,14 @@
+﻿<Window x:Class="MouseCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Захват мыши" Height="350" Width="525">
+    <StackPanel>
+        <Rectangle Fill="LightBlue" Height="150" Name="Rect"
+                   MouseMove="Rectangle_MouseMove" 
+                   MouseDown="Rectangle_MouseDown" 
+                   MouseUp="Rectangle_MouseUp">
+        </Rectangle>
+        <CheckBox Content="Захват мыши" Margin="10" Name="IsCaptureMouse"></CheckBox>
+        <TextBlock Name="TextBlock1" Margin="10"></TextBlock>
+    </StackPanel>
+</Window>

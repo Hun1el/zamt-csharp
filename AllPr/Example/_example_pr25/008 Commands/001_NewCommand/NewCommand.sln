@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_NewCommand", "NewCommand\1_NewCommand.csproj", "{E300B8B2-11EF-4465-95F9-F55E27C951DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_NewCommandXamlBinding", "NewCommandXamlBinding\2_NewCommandXamlBinding.csproj", "{9BA8B1A9-59AB-405F-9D1B-979CAC7B7DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_NewCommandMenu", "NewCommandMenu\3_NewCommandMenu.csproj", "{BFA36DDA-A4D9-4463-A4CA-9C2B7F570F23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E300B8B2-11EF-4465-95F9-F55E27C951DC}.Debug|x86.ActiveCfg = Debug|x86
+		{E300B8B2-11EF-4465-95F9-F55E27C951DC}.Debug|x86.Build.0 = Debug|x86
+		{E300B8B2-11EF-4465-95F9-F55E27C951DC}.Release|x86.ActiveCfg = Release|x86
+		{E300B8B2-11EF-4465-95F9-F55E27C951DC}.Release|x86.Build.0 = Release|x86
+		{9BA8B1A9-59AB-405F-9D1B-979CAC7B7DB2}.Debug|x86.ActiveCfg = Debug|x86
+		{9BA8B1A9-59AB-405F-9D1B-979CAC7B7DB2}.Debug|x86.Build.0 = Debug|x86
+		{9BA8B1A9-59AB-405F-9D1B-979CAC7B7DB2}.Release|x86.ActiveCfg = Release|x86
+		{9BA8B1A9-59AB-405F-9D1B-979CAC7B7DB2}.Release|x86.Build.0 = Release|x86
+		{BFA36DDA-A4D9-4463-A4CA-9C2B7F570F23}.Debug|x86.ActiveCfg = Debug|x86
+		{BFA36DDA-A4D9-4463-A4CA-9C2B7F570F23}.Debug|x86.Build.0 = Debug|x86
+		{BFA36DDA-A4D9-4463-A4CA-9C2B7F570F23}.Release|x86.ActiveCfg = Release|x86
+		{BFA36DDA-A4D9-4463-A4CA-9C2B7F570F23}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

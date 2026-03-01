@@ -1,0 +1,30 @@
+﻿<Window x:Class="_003_Transparent.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Настройка прозрачности в элементах управления" 
+        Height="331" 
+        Width="529">
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        
+        
+        <Button Width="100" Height="100" Margin="110,141,298,51"></Button>
+        
+        <!--Opacity - свойство устанавливающее непрозрачность элемента. 1 - полностью непрозрачный 0 - полностью прозрачный.-->
+        <Button Name="textBox"
+                 Width="200"
+                 Height="92"
+                 
+                 Opacity="0.5"
+                 
+                 Margin="175,73,132,127"
+                 Background="Red"
+                 Foreground="White">    
+        </Button>
+        
+        
+    </Grid>
+</Window>
