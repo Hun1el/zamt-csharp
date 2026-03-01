@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace Pr19
 {
@@ -17,7 +19,28 @@ namespace Pr19
     {
         static void Main(string[] args)
         {
+            // Задание 1
+            XPathDocument input1 = new XPathDocument("input1.xml");
+            XPathNavigator navigator1 = input1.CreateNavigator();
 
+            string str = navigator1.SelectSingleNode("/task/number").Value;
+            int number = Convert.ToInt32(str);
+
+            if (number < 1000 || number > 9999)
+            {
+                Console.WriteLine("Число должно быть четырехзначным.");
+            }
+            else
+            {
+                Console.WriteLine("Задание 1 выполнено.");
+            }
+
+            bool outputfile1 = number.ToString().Distinct().Count() == 4;
+
+            var output1 = new XElement("result", new XElement("output", outputfile1));
+            output1.Save("output1.xml");
+
+            Console.ReadKey();
         }
     }
 }
