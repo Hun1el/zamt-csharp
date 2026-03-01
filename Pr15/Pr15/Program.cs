@@ -83,6 +83,40 @@ namespace Pr15
             }
         }
 
+        class Liquid
+        {
+            public string name;
+            public double density;
+
+            public Liquid(string name, double density)
+            {
+                if (density <= 0)
+                {
+                    Console.WriteLine("Плотность должна быть больше 0.");
+                }
+                Console.WriteLine($"Создана жидкость: {name}, Плотность: {density}");
+            }
+
+            public void Newname(string newname)
+            {
+                name = newname;
+                Console.WriteLine($"Название жидкости изменено на: {name}");
+            }
+
+            public void Newdensity(double newdensity)
+            {
+                if (newdensity <= 0)
+                {
+                    Console.WriteLine("Плотность должна быть больше 0.");
+                }
+                else
+                {
+                    density = newdensity;
+                    Console.WriteLine($"Плотность жидкости {name} изменена на: {density}");
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             // Задание 1
