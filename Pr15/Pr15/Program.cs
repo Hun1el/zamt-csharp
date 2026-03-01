@@ -102,6 +102,15 @@ namespace Pr15
                     Console.WriteLine("Изменить мощность двигателя:");
                     int newpower = Try("Введите новую мощность:");
                     car.Newpower(newpower);
+
+                    int capacity = Try("\nВведите грузоподъемность грузовика (в кг):");
+                    Lorry lorry = new Lorry(brand, cylinders, newpower, capacity);
+
+                    Console.WriteLine("\nИзменить марку и грузоподъемность грузовика:");
+                    string newTruckBrand = Console.ReadLine();
+                    int newCapacity = Try("Введите новую грузоподъемность:");
+
+                    lorry.NewbrandAndCapacity(newTruckBrand, newCapacity);
                     break;
                 }
                 catch (FormatException ex1)
