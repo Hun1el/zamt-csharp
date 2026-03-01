@@ -82,5 +82,10 @@ namespace Pr14
                 Console.WriteLine(yacht);
             }
         }
+
+        static void Num(Yacht[] yachts, int index)
+        {
+            Console.WriteLine(yachts[index]);
+        }
     }
 }
